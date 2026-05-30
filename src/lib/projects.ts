@@ -28,12 +28,12 @@ export const projects: Project[] = [
     slug: "project-1",
     n: "01",
     title: "Project 1",
-    category: "Brand Identity",
+    category: "Identity / Strategy / Art Direction",
     year: "2026",
     client: "Selected Work",
     role: "Art Direction, Visual System",
     intro:
-      "Visual systems built from symbols, colors, typography, and meaning.",
+      "A complete identity shaped around one strong symbol, a clear message, and a visual system built to grow.",
     main: "/images/project-1/main.png",
     dominantColor: "#816E56",
     media: makeMedia("project-1", [
@@ -64,12 +64,12 @@ export const projects: Project[] = [
     slug: "project-2",
     n: "02",
     title: "Project 2",
-    category: "Campaign Design",
+    category: "Campaign Direction",
     year: "2026",
     client: "Selected Work",
     role: "Creative Direction, Layout",
     intro:
-      "Creative directions for launches, stories, and digital moments.",
+      "A visual campaign designed to make the brand feel active, emotional, and memorable.",
     main: "/images/project-2/main.png",
     dominantColor: "#533927",
     media: makeMedia("project-2", [
@@ -97,12 +97,12 @@ export const projects: Project[] = [
     slug: "project-3",
     n: "03",
     title: "Project 3",
-    category: "Visual Identity",
+    category: "Identity / Social World",
     year: "2026",
     client: "Selected Work",
     role: "Brand, Motion, Direction",
     intro:
-      "Distinct brand worlds with their own mood, rhythm, and atmosphere.",
+      "A soft, minimal cafe identity built around warmth, simplicity, and one memorable symbol.",
     main: "/images/project-3/main.png",
     dominantColor: "#00063A",
     media: makeMedia("project-3", ["main.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.mp4"]),
@@ -110,13 +110,13 @@ export const projects: Project[] = [
   {
     slug: "layers-coffe-shop",
     n: "04",
-    title: "Cookie Bay",
-    category: "Bakery & Coffee Concept",
+    title: "Layers Coffee Shop",
+    category: "Packaging / Atmosphere / Art Direction",
     year: "2026",
-    client: "Cookie Bay",
+    client: "Layers Coffee Shop",
     role: "Identity, Social Content",
     intro:
-      "A warm, minimal bakery and coffee concept with a soft visual identity.",
+      "A fragrance world shaped through bottle concepts, natural forms, packaging direction, and atmosphere.",
     main: "/images/Layers-coffe-shop/1.jpg",
     dominantColor: "#42210D",
     media: makeMedia("Layers-coffe-shop", [
@@ -138,12 +138,12 @@ export const projects: Project[] = [
     slug: "maghrebwaves",
     n: "05",
     title: "Maghreb Waves",
-    category: "Music Visuals",
+    category: "Storytelling / Surf Culture / Social Identity",
     year: "2026",
     client: "Maghreb Waves",
-    role: "Cover Art, Campaign System",
+    role: "Storytelling, Surf Culture, Social Identity",
     intro:
-      "Artist templates, lineup designs, and event visuals shaped by sound and motion.",
+      "A surf-inspired brand world built around movement, ocean energy, and visual storytelling.",
     main: "/images/Maghrebwaves/1.jpg",
     dominantColor: "#233C50",
     media: makeMedia("Maghrebwaves", [
@@ -168,13 +168,13 @@ export const projects: Project[] = [
   {
     slug: "orea-coastal-parfum",
     n: "06",
-    title: "Orea",
-    category: "Packaging",
+    title: "Orea Coastal Parfum",
+    category: "Character / Symbol / Visual Universe",
     year: "2026",
     client: "Orea",
-    role: "Brand, Packaging, Art Direction",
+    role: "Character, Symbol, Visual Universe",
     intro:
-      "A perfume concept inspired by organic forms, sea texture, and soft luxury.",
+      "A character and symbol system built as a visual universe with its own rhythm, marks, and presence.",
     main: "/images/orea-coastal-parfum/1.jpg",
     dominantColor: "#A5A486",
     media: makeMedia("orea-coastal-parfum", [

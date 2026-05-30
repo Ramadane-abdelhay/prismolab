@@ -19,30 +19,38 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const values = [
-  { t: "Vision", d: "We find the core idea, the feeling, and the direction behind the project." },
-  { t: "Expansion", d: "We explore colors, symbols, textures, references, and visual language." },
-  { t: "Identity", d: "We shape the logo, typography, design system, and brand presence." },
-  { t: "Emotion", d: "We build visuals that people can feel before they even understand them." },
-  { t: "World", d: "We prepare the brand to live across social media, campaigns, websites, products, and real experiences." },
+const method = [
+  { t: "The Signal", d: "The first feeling behind the idea." },
+  { t: "The Meaning", d: "The story, audience, message, and reason people should care." },
+  { t: "The Symbol", d: "The logo, mark, typography, colors, and visual language." },
+  { t: "The System", d: "The layouts, content rules, social style, and brand consistency." },
+  { t: "The World", d: "The full atmosphere across website, social media, packaging, campaigns, and digital presence." },
 ];
 
-const questions = [
+const services = [
   {
-    q: "What kind of projects does Prismo Lab take?",
-    a: "Brand identities, visual worlds, social content systems, art direction, packaging concepts, digital experiences, and campaigns built around a strong feeling.",
+    t: "Brand Strategy",
+    d: "Positioning, audience, message, personality, and creative angle.",
   },
   {
-    q: "Do I need a complete idea before reaching out?",
-    a: "No. A spark is enough. Prismo can help shape the direction, mood, story, and visual language around it.",
+    t: "Visual Identity",
+    d: "Logo, symbol, typography, colors, and visual system.",
   },
   {
-    q: "Can one service become a full identity?",
-    a: "Yes. A logo, campaign, or social system can expand into a complete brand world when the project needs more depth.",
+    t: "Storytelling",
+    d: "Brand story, launch concept, content ideas, and narrative direction.",
   },
   {
-    q: "Do you work with clients outside Morocco?",
-    a: "Yes. Prismo Lab works from Morocco with brands, artists, and projects worldwide.",
+    t: "Art Direction",
+    d: "Mood, references, composition, texture, and visual atmosphere.",
+  },
+  {
+    t: "Digital Experience",
+    d: "Website direction, landing pages, portfolio systems, and digital presence.",
+  },
+  {
+    t: "Social Identity",
+    d: "Instagram, Pinterest, carousel systems, launch posts, and content style.",
   },
 ];
 
@@ -69,7 +77,7 @@ function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xs uppercase tracking-[0.4em] text-muted-foreground"
           >
-            / Creative Studio - Born from light
+            Creative Identity Lab
           </motion.p>
 
           <motion.h1
@@ -90,9 +98,9 @@ function Home() {
               className="md:col-span-2 max-w-xl text-lg md:max-w-lg md:text-lg lg:text-xl text-foreground/80 leading-relaxed"
             >
               <span className="uppercase tracking-[0.3em] text-xs text-muted-foreground block mb-3">
-                Turn Ideas Into Vision
+                Seen by Prismo. Shaped in the Lab.
               </span>
-              A creative studio for brand identity, art direction, social content, and digital experiences built around emotion, meaning, and vision.
+              Prismo Lab is a creative identity lab guided by a way of seeing. We take raw ideas, hidden feelings, and unfinished visions, then shape them into strategy, symbols, stories, and atmosphere.
             </motion.p>
 
             <motion.div
@@ -105,13 +113,13 @@ function Home() {
                 to="/projects"
                 className="group inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-xs uppercase tracking-[0.25em] hover:shadow-prism transition"
               >
-                View Projects <ArrowUpRight size={14} className="group-hover:rotate-45 transition" />
+                View Worlds <ArrowUpRight size={14} className="group-hover:rotate-45 transition" />
               </Link>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-xs uppercase tracking-[0.25em] hover:bg-white/5 transition"
               >
-                Start a Project
+                Enter the Lab
               </Link>
             </motion.div>
           </div>
@@ -119,17 +127,17 @@ function Home() {
 
         {/* scroll cue */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
-          <span>Scroll into light</span>
+          <span>Follow his vision</span>
           <span className="h-12 w-px bg-gradient-to-b from-white/60 to-transparent" />
         </div>
       </section>
 
       {/* MOVING TEXT */}
       <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.03] py-5">
-        <div className="home-marquee flex w-max whitespace-nowrap font-display text-2xl md:text-4xl uppercase tracking-[0.25em] text-foreground/80">
+        <div className="home-marquee flex w-max whitespace-nowrap font-display text-xl uppercase tracking-[0.25em] text-foreground/80 md:text-3xl">
           {Array.from({ length: 2 }).map((_, group) => (
             <div key={group} className="flex items-center gap-6 md:gap-10">
-              {["Branding", "Art Direction", "Visual Worlds", "Social Content", "Motion Concepts", "Packaging", "Digital Experience"].map((item) => (
+              {["Strategy", "Symbols", "Stories", "Art Direction", "Identity Systems", "Social Presence", "Brand Worlds"].map((item) => (
                 <Fragment key={`${group}-${item}`}>
                   <span>{item}</span>
                   <span className="text-prism leading-none">△</span>
@@ -144,54 +152,66 @@ function Home() {
       <section className="relative py-32 md:py-48 px-6">
         <div className="mx-auto max-w-7xl grid md:grid-cols-12 gap-10 items-center">
           <Reveal className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">/ About</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">ABOUT</p>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight pr-3">
               Who is <span className="inline-block pr-3 italic font-light text-prism">Prismo?</span>
             </h2>
+            <p className="mt-6 max-w-xl font-display text-2xl leading-tight text-foreground/70 md:text-3xl">
+              Prismo is the eye behind the idea.
+            </p>
           </Reveal>
           <Reveal delay={0.2} className="md:col-span-5 space-y-6 text-foreground/80 leading-relaxed">
             <p>
-              Prismo is the creative force behind the studio.
+              Prismo is a character, a philosophy, and a way of seeing.
               <br /><br />
-              He sees the hidden light inside an idea and turns it into something visible.
+              He sees what others miss: the hidden feeling, the strange detail, the symbol waiting inside the idea.
             </p>
             <p className="text-muted-foreground">
-              Inspired by the prism, Prismo transforms one small spark into many layers: identity, story, emotion, atmosphere, and digital presence.
-              <br /><br />
-              Prismo Lab exists for brands, artists, and projects that need more than design.
-              They need a world of their own.
+              Prismo Lab is where that vision becomes real.
             </p>
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+              {[
+                ["Logo", "Signal"],
+                ["Product", "World"],
+                ["Style", "Meaning"],
+              ].map(([from, to], index) => (
+                <div key={`${from}-${to}`} className="grid grid-cols-[5.5rem_1fr_1.5rem_1fr_5.5rem] items-center border-t border-white/10 px-5 py-4 first:border-t-0">
+                  <span className="font-display text-xl text-foreground">{from}</span>
+                  <span className="h-px bg-white/55" />
+                  <span className="relative z-10 grid place-items-center text-prism">△</span>
+                  <span className="h-px bg-prism" />
+                  <span className="text-right font-display text-xl text-muted-foreground">{to}</span>
+                </div>
+              ))}
+            </div>
             <Link
               to="/about"
               className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] border-b border-white/20 pb-1 hover:border-white/60"
             >
-              More about Prismo <ArrowRight size={14} />
+              Discover the Lab <ArrowRight size={14} />
             </Link>
           </Reveal>
         </div>
       </section>
 
-      {/* VALUES */}
+      {/* METHOD */}
       <section className="relative py-32 px-6 overflow-hidden border-y border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_58%)]" />
         <div className="relative mx-auto max-w-7xl">
           <Reveal className="grid gap-10 md:grid-cols-12 md:items-end">
             <div className="md:col-span-6">
-              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">/ The Spectrum</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">The Refraction</p>
               <h2 className="font-display text-4xl md:text-6xl tracking-tight max-w-3xl">
-                Every idea moves<br />through light.
+                How Prismo sees a brand.
               </h2>
             </div>
             <p className="md:col-span-5 md:col-start-8 text-lg leading-relaxed text-foreground/75">
-              It starts as a spark.
-              Then it expands into form, color, story, and identity.
-              <br /><br />
-              This is how Prismo turns ideas into vision.
+              A brand does not begin with colors or fonts. It begins with a feeling, a tension, a memory, a dream, or a detail that refuses to disappear.
             </p>
           </Reveal>
 
           <div className="mt-20">
-            {values.map((v, i) => (
+            {method.map((v, i) => (
               <Reveal key={v.t} delay={i * 0.08}>
                 <div className="grid gap-6 border-t border-white/10 py-8 md:grid-cols-12 md:items-center">
                   <span className="font-display text-3xl text-foreground/35 md:col-span-2">
@@ -208,16 +228,43 @@ function Home() {
         </div>
       </section>
 
+      {/* SERVICES */}
+      <section className="relative py-32 px-6">
+        <div className="mx-auto max-w-7xl">
+          <Reveal className="mb-16 max-w-4xl">
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">What the Lab Shapes</p>
+            <h2 className="font-display text-4xl md:text-6xl tracking-tight">
+              Prismo turns vision into identity systems.
+            </h2>
+          </Reveal>
+
+          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => (
+              <Reveal key={service.t} delay={(i % 3) * 0.06}>
+                <div className="h-full bg-background p-8 transition hover:bg-deep-navy/60">
+                  <span className="font-display text-3xl text-foreground/30">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-10 font-display text-3xl tracking-tight">{service.t}</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{service.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED */}
       <section className="relative py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <Reveal className="flex items-end justify-between flex-wrap gap-4 mb-16">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">/ Selected Worlds</p>
-              <h2 className="font-display text-4xl md:text-6xl tracking-tight">Ideas shaped into worlds.</h2>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">The Worlds</p>
+              <h2 className="font-display text-4xl md:text-6xl tracking-tight">Selected work from inside the lab.</h2>
+              <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
+                Each project carries its own symbol, atmosphere, story, and visual rhythm.
+              </p>
             </div>
             <Link to="/projects" className="text-sm uppercase tracking-[0.25em] border-b border-white/20 pb-1 hover:border-white/60 inline-flex gap-2 items-center">
-              View all <ArrowRight size={14} />
+              View Worlds <ArrowRight size={14} />
             </Link>
           </Reveal>
 
@@ -252,32 +299,27 @@ function Home() {
         </div>
       </section>
 
-      {/* Q&A */}
+      {/* MANIFESTO */}
       <section className="relative border-y border-white/5 px-6 py-32">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_60%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
           <Reveal className="md:col-span-5">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Q&A</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">The Prismo Manifesto</p>
             <h2 className="mt-5 font-display text-4xl leading-[1] tracking-tight md:text-6xl">
-              Before the spark becomes a project.
+              A brand should be seen before it is explained.
             </h2>
           </Reveal>
 
-          <div className="md:col-span-7">
-            {questions.map((item, index) => (
-              <Reveal key={item.q} delay={index * 0.06}>
-                <details className="group border-t border-white/10 py-6 last:border-b">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
-                    <span className="font-display text-2xl tracking-tight">{item.q}</span>
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/15 text-prism transition group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">{item.a}</p>
-                </details>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.12} className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-7">
+            <p>
+              Prismo believes every brand carries a hidden shape.
+            </p>
+            <p className="text-muted-foreground">
+              The work is to find it. Name it. Shape it. Give it a symbol. Give it a rhythm. Give it a feeling people can remember.
+              <br /><br />
+              A brand becomes powerful when people can recognize its feeling without needing everything explained.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -287,22 +329,20 @@ function Home() {
         <Starfield count={50} />
         <div className="relative mx-auto max-w-5xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">/ Let's collaborate</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">Send the Signal</p>
             <h2 className="font-display text-5xl md:text-8xl leading-[0.95] tracking-tighter">
-              Let's shape your idea
+              Let Prismo see what
               <br />
-              <span className="text-prism animate-shimmer">into vision.</span>
+              <span className="text-prism animate-shimmer">your idea could become.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75">
-              Have a brand, project, product, or concept that needs a world around it?
-              <br /><br />
-              Bring the spark. Prismo will help you shape the identity, the feeling, and the visuals around it.
+              Bring the name, product, dream, or unfinished thought. Prismo Lab will help shape it into strategy, identity, story, and a visual direction.
             </p>
             <Link
               to="/contact"
               className="mt-12 inline-flex items-center gap-3 rounded-full bg-foreground text-background px-8 py-4 text-sm uppercase tracking-[0.25em] hover:shadow-prism transition"
             >
-              Start Your Vision <ArrowUpRight size={16} />
+              Start a Vision <ArrowUpRight size={16} />
             </Link>
           </Reveal>
         </div>

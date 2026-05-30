@@ -58,8 +58,8 @@ function About() {
           <Reveal delay={0.15} className="lg:col-span-5">
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
               <img
-                src="/images/project-1/main.png"
-                alt="Prismo Lab visual world"
+                src="/images/hamza.jpeg"
+                alt="Hamza, the creative eye behind Prismo Lab"
                 className="aspect-[4/5] h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />

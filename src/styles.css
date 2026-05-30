@@ -152,6 +152,10 @@
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
   }
+  @keyframes shimmer-reverse {
+    0% { background-position: 200% 50%; }
+    100% { background-position: 0% 50%; }
+  }
   @keyframes pulse-glow {
     0%,100% { opacity: 0.6; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.05); }
@@ -165,6 +169,10 @@
   .animate-shimmer {
     background-size: 200% 100%;
     animation: shimmer 6s linear infinite;
+  }
+  .animate-shimmer-reverse {
+    background-size: 200% 100%;
+    animation: shimmer-reverse 6s linear infinite;
   }
   .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
   .animate-spin-slow { animation: spin-slow 30s linear infinite; }

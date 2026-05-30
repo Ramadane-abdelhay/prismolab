@@ -41,9 +41,9 @@ export function Navbar() {
       >
         <Link to="/" className="flex items-center">
           <img
-            src="/images/logo.png"
+            src="/images/logo.svg"
             alt="Prismo Lab"
-            className="h-10 w-auto object-contain md:h-11"
+            className="h-8 w-auto object-contain drop-shadow-[0_0_14px_rgba(255,255,255,0.45)] md:h-9"
           />
         </Link>
 
