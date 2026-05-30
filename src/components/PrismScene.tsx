@@ -45,47 +45,34 @@ export function PrismScene({ className = "" }: { className?: string }) {
 
       {/* refracted rainbow light */}
       <motion.div
-        initial={{ opacity: 0, scaleX: 0.68 }}
-        animate={{ opacity: 1, scaleX: 1 }}
-        transition={{ duration: 2.4, delay: 1.35, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.68 }}
+        transition={{ duration: 1.4, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute top-1/2 left-1/2 h-[86px] w-[54%] -translate-y-1/2 origin-left md:left-[58%] md:h-[100px] md:w-[42%] xl:h-[108px]"
-      >
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(24px)" }}
-          animate={{ opacity: 0.68, filter: "blur(18px)" }}
-          transition={{ duration: 2.2, delay: 1.45, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0"
-          style={{
-            clipPath: "polygon(0px 50%, 100% 5%, 100% 95%, 0px 52%)",
-            background:
-              "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(245,250,255,0.82) 11%, oklch(0.86 0.12 210 / 0.54) 24%, oklch(0.86 0.17 160 / 0.52) 38%, oklch(0.90 0.16 96 / 0.50) 52%, oklch(0.80 0.17 54 / 0.52) 66%, oklch(0.72 0.24 346 / 0.54) 81%, oklch(0.66 0.22 292 / 0.45) 94%, transparent 100%)",
-            maskImage: "linear-gradient(180deg, transparent 0%, black 30%, black 70%, transparent 100%)",
-            mixBlendMode: "screen",
-          }}
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.52 }}
-          transition={{ duration: 1.5, delay: 1.25, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute left-[-2.5rem] top-1/2 h-24 w-36 -translate-y-1/2"
-          style={{
-            background:
-              "radial-gradient(ellipse at left, rgba(255,255,255,0.96), rgba(226,241,255,0.46) 38%, transparent 72%)",
-            filter: "blur(14px)",
-            mixBlendMode: "screen",
-          }}
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 1.35, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute left-[-1.5rem] top-1/2 h-16 w-16 -translate-y-1/2 rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(255,255,255,0.95), rgba(255,255,255,0.32) 38%, transparent 70%)",
-            filter: "blur(8px)",
-          }}
-        />
-      </motion.div>
+        style={{
+          clipPath: "polygon(0px 50%, 100% 5%, 100% 95%, 0px 52%)",
+          background:
+            "linear-gradient(361deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 250, 255, 0.82) 11%, oklch(0.86 0.12 210 / 0.54) 24%, oklch(0.86 0.17 160 / 0.52) 38%, oklch(0.9 0.16 96 / 0.5) 52%, oklch(0.8 0.17 54 / 0.52) 66%, oklch(0.72 0.24 346 / 0.54) 81%, oklch(0.66 0.22 292 / 0.45) 94%, transparent 100%)",
+          filter: "blur(18px)",
+          maskImage: "linear-gradient(180deg, transparent 0%, black 30%, black 70%, transparent 100%)",
+          mixBlendMode: "screen",
+        }}
+      />
+
+      {/* glowing studio symbol at the light split */}
+      <motion.img
+        src="/images/symbol.svg"
+        alt=""
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: 0.7, rotate: -18 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 1.1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-14 w-14 -translate-x-1/2 -translate-y-1/2 object-contain md:left-[58%] md:h-20 md:w-20 xl:h-24 xl:w-24"
+        style={{
+          filter:
+            "drop-shadow(0 0 10px rgba(255,255,255,1)) drop-shadow(0 0 26px rgba(180,220,255,0.85)) drop-shadow(0 0 52px rgba(255,255,255,0.55))",
+        }}
+      />
 
       {/* soft bloom */}
       <div

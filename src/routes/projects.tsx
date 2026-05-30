@@ -66,6 +66,28 @@ function Projects() {
           ))}
         </div>
       </section>
+
+      <section className="relative overflow-hidden px-6 py-32">
+        <div className="absolute inset-0 bg-aurora opacity-25" />
+        <div className="relative mx-auto max-w-5xl text-center">
+          <Reveal>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Your world next</p>
+            <h2 className="mt-6 font-display text-5xl leading-[0.95] tracking-tighter md:text-8xl">
+              Have a spark<br />
+              <span className="text-prism">waiting for shape?</span>
+            </h2>
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75">
+              Bring the idea, product, brand, or visual direction. Prismo will help turn it into a world people can feel.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-12 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm uppercase tracking-[0.25em] text-background transition hover:shadow-prism"
+            >
+              Start Your Vision <ArrowUpRight size={16} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }

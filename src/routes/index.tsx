@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Starfield } from "../components/Starfield";
 import { PrismScene } from "../components/PrismScene";
@@ -20,11 +20,30 @@ export const Route = createFileRoute("/")({
 });
 
 const values = [
-  { t: "Vision", d: "We translate intuition into images that linger." },
-  { t: "Identity", d: "Logos, systems, and the soul behind them." },
-  { t: "Emotion", d: "Design that moves before it explains." },
-  { t: "Motion", d: "Frames that breathe, type that pulses." },
-  { t: "Experience", d: "Interfaces tuned like cinema." },
+  { t: "Vision", d: "We find the core idea, the feeling, and the direction behind the project." },
+  { t: "Expansion", d: "We explore colors, symbols, textures, references, and visual language." },
+  { t: "Identity", d: "We shape the logo, typography, design system, and brand presence." },
+  { t: "Emotion", d: "We build visuals that people can feel before they even understand them." },
+  { t: "World", d: "We prepare the brand to live across social media, campaigns, websites, products, and real experiences." },
+];
+
+const questions = [
+  {
+    q: "What kind of projects does Prismo Lab take?",
+    a: "Brand identities, visual worlds, social content systems, art direction, packaging concepts, digital experiences, and campaigns built around a strong feeling.",
+  },
+  {
+    q: "Do I need a complete idea before reaching out?",
+    a: "No. A spark is enough. Prismo can help shape the direction, mood, story, and visual language around it.",
+  },
+  {
+    q: "Can one service become a full identity?",
+    a: "Yes. A logo, campaign, or social system can expand into a complete brand world when the project needs more depth.",
+  },
+  {
+    q: "Do you work with clients outside Morocco?",
+    a: "Yes. Prismo Lab works from Morocco with brands, artists, and projects worldwide.",
+  },
 ];
 
 function Home() {
@@ -37,7 +56,7 @@ function Home() {
     <>
       {/* HERO */}
       <section ref={ref} className="relative min-h-[112svh] overflow-hidden md:min-h-screen">
-        <div className="absolute inset-0 bg-aurora opacity-70" />
+        <div className="absolute inset-0 bg-aurora opacity-15" />
         <Starfield count={120} />
         <motion.div style={{ y, opacity }} className="absolute inset-0 -translate-y-10 md:translate-y-0">
           <PrismScene />
@@ -50,7 +69,7 @@ function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xs uppercase tracking-[0.4em] text-muted-foreground"
           >
-            / Creative Studio — Est. since light
+            / Creative Studio - Born from light
           </motion.p>
 
           <motion.h1
@@ -73,8 +92,7 @@ function Home() {
               <span className="uppercase tracking-[0.3em] text-xs text-muted-foreground block mb-3">
                 Turn Ideas Into Vision
               </span>
-              Creative direction, branding, visuals and digital experiences refracted through
-              light. We design like cinema — slow, immersive, and unforgettable.
+              A creative studio for brand identity, art direction, social content, and digital experiences built around emotion, meaning, and vision.
             </motion.p>
 
             <motion.div
@@ -110,11 +128,12 @@ function Home() {
       <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.03] py-5">
         <div className="home-marquee flex w-max whitespace-nowrap font-display text-2xl md:text-4xl uppercase tracking-[0.25em] text-foreground/80">
           {Array.from({ length: 2 }).map((_, group) => (
-            <div key={group} className="flex items-center">
-              {["Branding", "Art Direction", "Visual Systems", "Motion", "Packaging", "Digital Experience"].map((item) => (
-                <span key={`${group}-${item}`} className="mx-6 md:mx-10">
-                  {item} <span className="text-prism">△</span>
-                </span>
+            <div key={group} className="flex items-center gap-6 md:gap-10">
+              {["Branding", "Art Direction", "Visual Worlds", "Social Content", "Motion Concepts", "Packaging", "Digital Experience"].map((item) => (
+                <Fragment key={`${group}-${item}`}>
+                  <span>{item}</span>
+                  <span className="text-prism leading-none">△</span>
+                </Fragment>
               ))}
             </div>
           ))}
@@ -126,31 +145,27 @@ function Home() {
         <div className="mx-auto max-w-7xl grid md:grid-cols-12 gap-10 items-center">
           <Reveal className="md:col-span-7">
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">/ About</p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">
-              I'm <span className="italic font-light text-prism">Hamza</span>
-              <br />
-              Elmansouri.
-              <br />
-              <span className="font-extralight text-foreground/70">A graphic designer</span>
-              <br />
-              <span className="font-extralight">obsessed with light.</span>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight pr-3">
+              Who is <span className="inline-block pr-3 italic font-light text-prism">Prismo?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2} className="md:col-span-5 space-y-6 text-foreground/80 leading-relaxed">
             <p>
-              I build brands the way directors build films — every frame, every transition,
-              every silence designed. My work lives between the editorial calm of Swiss design
-              and the immersive energy of coastal, nomadic life.
+              Prismo is the creative force behind the studio.
+              <br /><br />
+              He sees the hidden light inside an idea and turns it into something visible.
             </p>
             <p className="text-muted-foreground">
-              Eight years across identity systems, album covers, motion, and digital art
-              direction for studios, musicians, and ocean-minded brands.
+              Inspired by the prism, Prismo transforms one small spark into many layers: identity, story, emotion, atmosphere, and digital presence.
+              <br /><br />
+              Prismo Lab exists for brands, artists, and projects that need more than design.
+              They need a world of their own.
             </p>
             <Link
               to="/about"
               className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] border-b border-white/20 pb-1 hover:border-white/60"
             >
-              More about me <ArrowRight size={14} />
+              More about Prismo <ArrowRight size={14} />
             </Link>
           </Reveal>
         </div>
@@ -164,12 +179,14 @@ function Home() {
             <div className="md:col-span-6">
               <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">/ The Spectrum</p>
               <h2 className="font-display text-4xl md:text-6xl tracking-tight max-w-3xl">
-                Every project moves<br />through a quiet sequence.
+                Every idea moves<br />through light.
               </h2>
             </div>
             <p className="md:col-span-5 md:col-start-8 text-lg leading-relaxed text-foreground/75">
-              It starts as a feeling, becomes a system, then finds its final shape through images,
-              motion, texture, and the small decisions that make a brand feel alive.
+              It starts as a spark.
+              Then it expands into form, color, story, and identity.
+              <br /><br />
+              This is how Prismo turns ideas into vision.
             </p>
           </Reveal>
 
@@ -196,8 +213,8 @@ function Home() {
         <div className="mx-auto max-w-7xl">
           <Reveal className="flex items-end justify-between flex-wrap gap-4 mb-16">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">/ Selected work</p>
-              <h2 className="font-display text-4xl md:text-6xl tracking-tight">Featured projects.</h2>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-4">/ Selected Worlds</p>
+              <h2 className="font-display text-4xl md:text-6xl tracking-tight">Ideas shaped into worlds.</h2>
             </div>
             <Link to="/projects" className="text-sm uppercase tracking-[0.25em] border-b border-white/20 pb-1 hover:border-white/60 inline-flex gap-2 items-center">
               View all <ArrowRight size={14} />
@@ -235,6 +252,35 @@ function Home() {
         </div>
       </section>
 
+      {/* Q&A */}
+      <section className="relative border-y border-white/5 px-6 py-32">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_60%)]" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+          <Reveal className="md:col-span-5">
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Q&A</p>
+            <h2 className="mt-5 font-display text-4xl leading-[1] tracking-tight md:text-6xl">
+              Before the spark becomes a project.
+            </h2>
+          </Reveal>
+
+          <div className="md:col-span-7">
+            {questions.map((item, index) => (
+              <Reveal key={item.q} delay={index * 0.06}>
+                <details className="group border-t border-white/10 py-6 last:border-b">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
+                    <span className="font-display text-2xl tracking-tight">{item.q}</span>
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/15 text-prism transition group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">{item.a}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative py-40 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-aurora animate-drift" />
@@ -243,10 +289,15 @@ function Home() {
           <Reveal>
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">/ Let's collaborate</p>
             <h2 className="font-display text-5xl md:text-8xl leading-[0.95] tracking-tighter">
-              Let's build something
+              Let's shape your idea
               <br />
-              <span className="text-prism animate-shimmer">unforgettable.</span>
+              <span className="text-prism animate-shimmer">into vision.</span>
             </h2>
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75">
+              Have a brand, project, product, or concept that needs a world around it?
+              <br /><br />
+              Bring the spark. Prismo will help you shape the identity, the feeling, and the visuals around it.
+            </p>
             <Link
               to="/contact"
               className="mt-12 inline-flex items-center gap-3 rounded-full bg-foreground text-background px-8 py-4 text-sm uppercase tracking-[0.25em] hover:shadow-prism transition"

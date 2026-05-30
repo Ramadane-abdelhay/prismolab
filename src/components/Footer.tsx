@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Mail, Globe } from "lucide-react";
+import { Instagram, Image, BriefcaseBusiness } from "lucide-react";
 import { Starfield } from "./Starfield";
 
 export function Footer() {
@@ -25,11 +25,15 @@ export function Footer() {
           <span className="text-foreground/30">LAB</span>
         </h2>
 
+        <p className="mt-8 max-w-xl text-sm leading-relaxed text-foreground/75">
+          Creative studio for brand identity, art direction, social content, and visual worlds.
+        </p>
+
         <div className="mt-16 grid gap-10 text-sm md:grid-cols-4">
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Contact</p>
             <a href="mailto:hello@prismolab.studio" className="block hover:text-prism">hello@prismolab.studio</a>
-            <p className="mt-2 text-muted-foreground">Casablanca &#9651; Lisbon &#9651; Anywhere</p>
+            <p className="mt-2 text-muted-foreground">Morocco &#9651; Worldwide</p>
           </div>
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Navigate</p>
@@ -43,7 +47,7 @@ export function Footer() {
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Elsewhere</p>
             <div className="flex gap-3">
-              {[Instagram, Linkedin, Globe, Mail].map((Icon, i) => (
+              {[Instagram, Image, BriefcaseBusiness].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
@@ -57,14 +61,17 @@ export function Footer() {
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Manifesto</p>
             <p className="leading-relaxed text-foreground/80">
-              They appear as light. They expand. They become vision.
+              Some ideas appear as light.
+              <br />
+              Prismo expands them.
+              <br />
+              They become vision.
             </p>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/5 pt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground md:flex-row">
-          <span>&copy; {new Date().getFullYear()} Prismo Lab - Hamza Elmansouri</span>
-          <span>Crafted in deep space</span>
+        <div className="mt-16 border-t border-white/5 pt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+          <span>&copy; 2026 Prismo Lab. Crafted in deep space.</span>
         </div>
       </div>
     </footer>

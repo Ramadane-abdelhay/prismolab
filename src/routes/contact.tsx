@@ -50,7 +50,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">Location</p>
-              <p className="text-lg">Casablanca · Lisbon · Anywhere with a horizon</p>
+              <p className="text-lg">Morocco △ Worldwide</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">Elsewhere</p>
@@ -67,7 +67,7 @@ function Contact() {
               onSubmit={(e) => { e.preventDefault(); setSent(true); }}
               className="glass rounded-3xl p-8 md:p-10 space-y-8"
             >
-              <Field label="Your name" placeholder="Hamza" required />
+              <Field label="Your name" placeholder="Your name" required />
               <Field label="Email" type="email" placeholder="you@studio.com" required />
               <Field label="Project type" placeholder="Brand identity, album cover…" />
               <label className="block">

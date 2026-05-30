@@ -1,122 +1,163 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "../components/Reveal";
 import { Starfield } from "../components/Starfield";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Prismo Lab" },
-      { name: "description", content: "Hamza Elmansouri — graphic designer behind Prismo Lab. Story, philosophy, and creative process." },
-      { property: "og:title", content: "About — Prismo Lab" },
-      { property: "og:description", content: "Hamza Elmansouri — graphic designer behind Prismo Lab." },
+      { title: "About - Prismo Lab" },
+      { name: "description", content: "Who is Prismo? The creative force behind Prismo Lab, turning hidden light into visual worlds." },
+      { property: "og:title", content: "About - Prismo Lab" },
+      { property: "og:description", content: "The creative force behind Prismo Lab." },
     ],
   }),
   component: About,
 });
 
-const timeline = [
-  { y: "2017", t: "First commissioned identity for a Moroccan surf school." },
-  { y: "2019", t: "Art direction for a Lisbon indie label, three EP covers." },
-  { y: "2021", t: "Launched the Nomad Atlas editorial series." },
-  { y: "2023", t: "Studio rebrand — Prismo Lab is born." },
-  { y: "2026", t: "Currently designing immersive identities worldwide." },
+const principles = [
+  {
+    n: "01",
+    title: "Find the spark",
+    body: "Every project begins with the small, quiet part of the idea that already carries emotion.",
+  },
+  {
+    n: "02",
+    title: "Build the atmosphere",
+    body: "Color, rhythm, image, texture, and type are shaped until the idea starts to feel like a world.",
+  },
+  {
+    n: "03",
+    title: "Make it live",
+    body: "The identity is prepared to move across social content, campaigns, websites, packaging, and real moments.",
+  },
 ];
 
-const tools = ["Figma", "After Effects", "Cinema 4D", "Blender", "Illustrator", "Photoshop", "InDesign", "Glyphs"];
+const spectrum = ["Identity", "Story", "Emotion", "Atmosphere", "Presence"];
 
 function About() {
   return (
     <>
-      <section className="relative pt-44 pb-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-aurora opacity-50" />
-        <Starfield count={70} />
-        <div className="relative mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ About</p>
-          <Reveal as="h1" className="mt-6 font-display text-[14vw] md:text-[10rem] leading-[0.85] tracking-tighter">
-            A designer<br />
-            <span className="italic font-light text-prism">becoming</span><br />
-            <span className="font-extralight">light.</span>
-          </Reveal>
-        </div>
-      </section>
+      <section className="relative min-h-screen overflow-hidden px-6 pt-40 pb-24">
+        <div className="absolute inset-0 bg-aurora opacity-55" />
+        <Starfield count={90} />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
 
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-7xl grid md:grid-cols-12 gap-10 md:items-start">
-          <Reveal className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Story</p>
-            <div className="mt-10 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+        <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ About</p>
+            <Reveal
+              as="h1"
+              className="mt-6 max-w-5xl font-display text-[18vw] leading-[0.82] tracking-tighter md:text-[9rem] lg:text-[10rem]"
+            >
+              Who is<br />
+              <span className="inline-block pr-5 italic font-light text-prism">Prismo?</span>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.15} className="lg:col-span-5">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
               <img
-                src="/images/project-1/1.jpg"
-                alt="Studio atmosphere"
-                className="h-full w-full object-cover"
+                src="/images/project-1/main.png"
+                alt="Prismo Lab visual world"
+                className="aspect-[4/5] h-full w-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <p className="absolute bottom-6 left-6 right-6 text-sm leading-relaxed text-foreground/80">
+                Prismo is the creative force behind the studio, seeing hidden light inside an idea and turning it into something visible.
+              </p>
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="md:col-span-8 space-y-6 text-lg text-foreground/85 leading-relaxed">
+        </div>
+      </section>
+
+      <section className="px-6 py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12 md:items-start">
+          <Reveal className="md:col-span-5">
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ The force</p>
+            <h2 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
+              A spark becomes<br />
+              <span className="text-prism">a world.</span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.12} className="space-y-7 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7">
             <p>
-              I grew up between the Atlantic coast and the desert silence of southern Morocco —
-              two horizons that taught me the same lesson: vastness asks for restraint.
+              Inspired by the prism, Prismo transforms one small spark into many layers: identity, story, emotion, atmosphere, and digital presence.
             </p>
-            <p>
-              Prismo Lab is the studio I always wanted to work for. A place where brands are
-              treated like films, where typography is choreography, and where every project
-              starts with a single white ray of light.
+            <p className="text-muted-foreground">
+              Prismo Lab exists for brands, artists, and projects that need more than design. They need a visual world with its own mood, rhythm, and meaning.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="px-6 py-24 bg-deep-navy/40">
-        <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-16">
-          {[
-            { h: "Philosophy", b: "Less surface, more soul. I strip projects down to a single feeling, then build outward until that feeling becomes a system." },
-            { h: "Process", b: "Listen → refract → compose → refine. Every project passes through the same prism but emerges in a different spectrum." },
-            { h: "Approach", b: "Editorial calm meets coastal freedom. Swiss grids loosened by salt air and late-night studio sessions." },
-            { h: "Inspirations", b: "Tarkovsky, Saul Bass, Massimo Vignelli, James Turrell, DJ Snake's Nomad, surf cinema, and the way light falls at 6:42 AM." },
-          ].map((c, i) => (
-            <Reveal key={c.h} delay={i * 0.1}>
-              <h3 className="font-display text-3xl md:text-4xl tracking-tight mb-4">{c.h}</h3>
-              <p className="text-foreground/75 leading-relaxed">{c.b}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden border-y border-white/5 px-6 py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.07),transparent_62%)]" />
+        <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">/ Tools</p>
-            <h2 className="font-display text-4xl md:text-6xl tracking-tight mb-12">The instruments.</h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Method</p>
+            <h2 className="mt-5 max-w-4xl font-display text-4xl leading-[1] tracking-tight md:text-6xl">
+              The work is quiet first, then it expands.
+            </h2>
           </Reveal>
-          <div className="flex flex-wrap gap-3">
-            {tools.map((t, i) => (
-              <Reveal key={t} delay={i * 0.04}>
-                <span className="glass rounded-full px-5 py-2 text-sm uppercase tracking-[0.2em]">{t}</span>
+
+          <div className="mt-16 grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 md:grid-cols-3">
+            {principles.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.08}>
+                <div className="h-full bg-background/95 p-8 transition hover:bg-deep-navy/70">
+                  <p className="font-display text-5xl text-foreground/20">{item.n}</p>
+                  <h3 className="mt-10 font-display text-3xl tracking-tight">{item.title}</h3>
+                  <p className="mt-4 leading-relaxed text-muted-foreground">{item.body}</p>
+                </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-28">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center">
+          <Reveal className="lg:col-span-5">
+            <div className="grid grid-cols-2 gap-4">
+              <img src="/images/orea-coastal-parfum/1.jpg" alt="Orea visual detail" className="aspect-[4/5] rounded-3xl object-cover" />
+              <img src="/images/Maghrebwaves/1.jpg" alt="Music visual detail" className="mt-12 aspect-[4/5] rounded-3xl object-cover" />
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.14} className="lg:col-span-6 lg:col-start-7">
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Spectrum</p>
+            <h2 className="mt-5 font-display text-4xl leading-[1] tracking-tight md:text-6xl">
+              One idea, many layers.
+            </h2>
+            <div className="mt-10 grid gap-3 sm:grid-cols-2">
+              {spectrum.map((item) => (
+                <div key={item} className="flex items-center justify-between border-b border-white/10 py-4">
+                  <span className="text-lg">{item}</span>
+                  <span className="text-prism">△</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="px-6 py-32">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-6">/ Timeline</p>
-            <h2 className="font-display text-4xl md:text-6xl tracking-tight mb-16">A spectrum of years.</h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Manifesto</p>
+            <h2 className="mt-6 font-display text-5xl leading-[0.95] tracking-tighter md:text-8xl">
+              Some ideas appear as light.
+              <br />
+              <span className="text-prism">Prismo expands them.</span>
+            </h2>
+            <Link
+              to="/contact"
+              className="mt-12 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm uppercase tracking-[0.25em] text-background transition hover:shadow-prism"
+            >
+              Start Your Vision <ArrowUpRight size={16} />
+            </Link>
           </Reveal>
-          <div className="relative pl-8 border-l border-white/10">
-            <div
-              className="absolute left-0 top-0 bottom-0 w-px"
-              style={{ background: "var(--gradient-prism)", opacity: 0.4 }}
-            />
-            {timeline.map((e, i) => (
-              <Reveal key={e.y} delay={i * 0.08} className="relative pb-14 last:pb-0">
-                <span className="absolute -left-[34px] top-1 h-3 w-3 rounded-full bg-prism shadow-glow" />
-                <p className="font-display text-2xl text-prism">{e.y}</p>
-                <p className="mt-2 text-lg text-foreground/85">{e.t}</p>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
     </>
