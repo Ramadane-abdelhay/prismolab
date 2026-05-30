@@ -45,6 +45,14 @@ export function Footer() {
             src="/images/logo.svg"
             alt="PRISMO LAB"
             className="absolute inset-0 h-full w-full object-contain opacity-30"
+            style={{ clipPath: "inset(0 40.5% 0 0)" }}
+          />
+          <img
+            src="/images/logo.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-contain opacity-30"
+            style={{ clipPath: "inset(0 0 0 69.5%)" }}
           />
           <div
             aria-hidden="true"
