@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const items = [
   { to: "/", label: "Home" },
@@ -34,7 +34,9 @@ export function Navbar() {
     >
       <div
         className={`mx-auto max-w-7xl px-6 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? "glass rounded-full mx-4 md:mx-auto py-3 px-6" : ""
+          scrolled
+            ? "mx-4 rounded-full border border-white/15 bg-background/45 py-3 px-5 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl md:mx-auto md:px-6"
+            : ""
         }`}
       >
         <Link to="/" className="flex items-center">
@@ -73,28 +75,45 @@ export function Navbar() {
         <button
           aria-label="Menu"
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-foreground shadow-[0_12px_40px_rgba(0,0,0,0.3)] backdrop-blur-2xl transition hover:bg-white/10"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden overflow-hidden px-4 transition-all duration-500 ${
+          open ? "max-h-[34rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="glass mx-4 mt-3 rounded-2xl p-6 flex flex-col gap-4">
-          {items.map((it) => (
-            <Link
-              key={it.to}
-              to={it.to}
-              className="text-2xl font-display tracking-tight hover:text-prism"
-            >
-              {it.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="mt-3 overflow-hidden rounded-[1.75rem] border border-white/15 bg-background/55 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-3xl">
+          <nav className="flex flex-col p-3">
+            {items.map((it, index) => {
+              const active = loc.pathname === it.to;
+              return (
+                <Link
+                  key={it.to}
+                  to={it.to}
+                  className={`group flex items-center justify-between rounded-2xl px-4 py-4 transition ${
+                    active ? "bg-white/10 text-foreground" : "text-foreground/75 hover:bg-white/5 hover:text-foreground"
+                  }`}
+                >
+                  <span className="font-display text-2xl tracking-tight">{it.label}</span>
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                    0{index + 1}
+                  </span>
+                </Link>
+              );
+            })}
+          </nav>
+          <Link
+            to="/contact"
+            className="mx-3 mb-3 flex items-center justify-between rounded-2xl bg-foreground px-4 py-4 text-background"
+          >
+            <span className="text-xs uppercase tracking-[0.25em]">Start Vision</span>
+            <ArrowUpRight size={16} />
+          </Link>
+        </div>
       </div>
     </header>
   );

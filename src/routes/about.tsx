@@ -41,9 +41,16 @@ function About() {
       </section>
 
       <section className="px-6 py-24">
-        <div className="mx-auto max-w-7xl grid md:grid-cols-12 gap-10">
+        <div className="mx-auto max-w-7xl grid md:grid-cols-12 gap-10 md:items-start">
           <Reveal className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Story</p>
+            <div className="mt-10 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+              <img
+                src="/images/project-1/1.jpg"
+                alt="Studio atmosphere"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </Reveal>
           <Reveal delay={0.1} className="md:col-span-8 space-y-6 text-lg text-foreground/85 leading-relaxed">
             <p>

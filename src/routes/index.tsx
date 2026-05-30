@@ -36,24 +36,14 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section ref={ref} className="relative min-h-screen overflow-hidden">
+      <section ref={ref} className="relative min-h-[112svh] overflow-hidden md:min-h-screen">
         <div className="absolute inset-0 bg-aurora opacity-70" />
         <Starfield count={120} />
-        <motion.div style={{ y, opacity }} className="absolute inset-0">
+        <motion.div style={{ y, opacity }} className="absolute inset-0 -translate-y-10 md:translate-y-0">
           <PrismScene />
         </motion.div>
 
-        {/* travelling beam */}
-        <div
-          className="pointer-events-none absolute left-1/3 top-0 h-full w-px animate-beam"
-          style={{ background: "var(--gradient-beam)" }}
-        />
-        <div
-          className="pointer-events-none absolute right-1/4 top-0 h-full w-px animate-beam"
-          style={{ background: "var(--gradient-beam)", animationDelay: "2s" }}
-        />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-44 md:pt-56 pb-32">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 md:pt-48 lg:pt-52 pb-32">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,18 +57,18 @@ function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 font-display font-medium leading-[0.85] tracking-tighter text-[18vw] md:text-[12rem]"
+            className="mt-6 md:mt-8 font-display font-medium leading-[0.85] tracking-tighter text-[15vw] md:text-[9.5rem] lg:text-[10.5rem] xl:text-[11rem]"
           >
             PRISMO
             <span className="block text-prism animate-shimmer">LAB</span>
           </motion.h1>
 
-          <div className="mt-10 grid md:grid-cols-3 gap-10 items-end">
+          <div className="mt-[35vh] grid gap-8 md:mt-10 md:grid-cols-3 md:gap-10 md:items-end">
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="md:col-span-2 max-w-xl text-lg md:text-xl text-foreground/80 leading-relaxed"
+              className="md:col-span-2 max-w-xl text-lg md:max-w-lg md:text-lg lg:text-xl text-foreground/80 leading-relaxed"
             >
               <span className="uppercase tracking-[0.3em] text-xs text-muted-foreground block mb-3">
                 Turn Ideas Into Vision
@@ -123,7 +113,7 @@ function Home() {
             <div key={group} className="flex items-center">
               {["Branding", "Art Direction", "Visual Systems", "Motion", "Packaging", "Digital Experience"].map((item) => (
                 <span key={`${group}-${item}`} className="mx-6 md:mx-10">
-                  {item} <span className="text-prism">/</span>
+                  {item} <span className="text-prism">△</span>
                 </span>
               ))}
             </div>

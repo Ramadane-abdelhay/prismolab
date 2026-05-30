@@ -35,6 +35,15 @@ function ProjectPage() {
   const heroMedia = getHeroMedia(project);
   const galleryMedia = getGalleryMedia(project, heroMedia);
   const useNaturalMediaSize = ["project-1", "project-2", "project-3"].includes(project.slug);
+  const useInstagramCrop = [
+    "alya",
+    "flexura-yoga-club",
+    "kite-fly-maroc",
+    "luxe-verve",
+    "surfeye",
+    "surfun",
+    "yacin-pet",
+  ].includes(project.slug);
 
   return (
     <article className="relative isolate overflow-hidden bg-background">
@@ -61,7 +70,13 @@ function ProjectPage() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-16">
-          <MediaFrame media={heroMedia} title={`${project.title} hero`} priority naturalSize={useNaturalMediaSize} />
+          <MediaFrame
+            media={heroMedia}
+            title={`${project.title} hero`}
+            priority
+            naturalSize={useNaturalMediaSize}
+            cropToFrame={useInstagramCrop}
+          />
         </Reveal>
       </section>
 
@@ -84,7 +99,12 @@ function ProjectPage() {
 
           {galleryMedia.map((media, index) => (
             <Reveal key={media.src} delay={(index % 3) * 0.04} className="w-full">
-              <MediaFrame media={media} title={`${project.title} visual ${index + 2}`} naturalSize={useNaturalMediaSize} />
+              <MediaFrame
+                media={media}
+                title={`${project.title} visual ${index + 2}`}
+                naturalSize={useNaturalMediaSize}
+                cropToFrame={useInstagramCrop}
+              />
             </Reveal>
           ))}
         </div>
@@ -130,16 +150,20 @@ function MediaFrame({
   title,
   priority = false,
   naturalSize = false,
+  cropToFrame = false,
 }: {
   media: ProjectMedia;
   title: string;
   priority?: boolean;
   naturalSize?: boolean;
+  cropToFrame?: boolean;
 }) {
   const frameClassName = naturalSize
     ? "mx-auto w-full max-w-[900px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_30px_120px_rgba(0,0,0,0.35)]"
     : "mx-auto aspect-[4/5] w-full max-w-[900px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_30px_120px_rgba(0,0,0,0.35)]";
-  const mediaClassName = naturalSize ? "block h-auto w-full object-contain" : "h-full w-full object-contain";
+  const mediaClassName = naturalSize
+    ? "block h-auto w-full object-contain"
+    : `h-full w-full ${cropToFrame ? "object-cover" : "object-contain"}`;
 
   return (
     <div className={frameClassName}>

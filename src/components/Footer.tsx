@@ -17,19 +17,22 @@ export function Footer() {
           / Turning ideas into vision
         </p>
 
-        <h2 className="mt-6 font-display text-[18vw] md:text-[14vw] leading-[0.85] tracking-tighter text-balance">
+        <h2 className="mt-6 w-full whitespace-nowrap font-display text-[13.8vw] leading-[0.85] tracking-tighter md:text-[14vw]">
           <span className="text-prism animate-shimmer">PRISMO</span>
-          <span className="text-foreground/30">·LAB</span>
+          <span className="inline-block align-[0.08em] text-[0.74em] font-black text-foreground/45 [-webkit-text-stroke:0.035em_currentColor]">
+            &#9651;
+          </span>
+          <span className="text-foreground/30">LAB</span>
         </h2>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-4 text-sm">
+        <div className="mt-16 grid gap-10 text-sm md:grid-cols-4">
           <div>
-            <p className="text-muted-foreground uppercase tracking-[0.25em] text-xs mb-3">Contact</p>
+            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Contact</p>
             <a href="mailto:hello@prismolab.studio" className="block hover:text-prism">hello@prismolab.studio</a>
-            <p className="mt-2 text-muted-foreground">Casablanca · Lisbon · Anywhere</p>
+            <p className="mt-2 text-muted-foreground">Casablanca &#9651; Lisbon &#9651; Anywhere</p>
           </div>
           <div>
-            <p className="text-muted-foreground uppercase tracking-[0.25em] text-xs mb-3">Navigate</p>
+            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Navigate</p>
             <div className="grid gap-1">
               <Link to="/about" className="hover:text-prism">About</Link>
               <Link to="/projects" className="hover:text-prism">Projects</Link>
@@ -38,25 +41,29 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="text-muted-foreground uppercase tracking-[0.25em] text-xs mb-3">Elsewhere</p>
+            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Elsewhere</p>
             <div className="flex gap-3">
-              {[Instagram, Linkedin, Globe, Mail].map((I, i) => (
-                <a key={i} href="#" className="grid place-items-center h-10 w-10 rounded-full border border-white/10 hover:border-white/40 hover:shadow-glow transition">
-                  <I size={16} />
+              {[Instagram, Linkedin, Globe, Mail].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-white/10 transition hover:border-white/40 hover:shadow-glow"
+                >
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <p className="text-muted-foreground uppercase tracking-[0.25em] text-xs mb-3">Manifesto</p>
-            <p className="text-foreground/80 leading-relaxed">
+            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Manifesto</p>
+            <p className="leading-relaxed text-foreground/80">
               They appear as light. They expand. They become vision.
             </p>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col md:flex-row justify-between gap-4 text-xs text-muted-foreground uppercase tracking-[0.25em] border-t border-white/5 pt-6">
-          <span>© {new Date().getFullYear()} Prismo Lab - Hamza Elmansouri</span>
+        <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/5 pt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground md:flex-row">
+          <span>&copy; {new Date().getFullYear()} Prismo Lab - Hamza Elmansouri</span>
           <span>Crafted in deep space</span>
         </div>
       </div>
