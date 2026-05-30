@@ -34,6 +34,7 @@ function ProjectPage() {
   const next = projects[(idx + 1) % projects.length];
   const heroMedia = getHeroMedia(project);
   const galleryMedia = getGalleryMedia(project, heroMedia);
+  const useNaturalMediaSize = ["project-1", "project-2", "project-3"].includes(project.slug);
 
   return (
     <article className="relative isolate overflow-hidden bg-background">
@@ -60,7 +61,7 @@ function ProjectPage() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-16">
-          <MediaFrame media={heroMedia} title={`${project.title} hero`} priority />
+          <MediaFrame media={heroMedia} title={`${project.title} hero`} priority naturalSize={useNaturalMediaSize} />
         </Reveal>
       </section>
 
@@ -83,7 +84,7 @@ function ProjectPage() {
 
           {galleryMedia.map((media, index) => (
             <Reveal key={media.src} delay={(index % 3) * 0.04} className="w-full">
-              <MediaFrame media={media} title={`${project.title} visual ${index + 2}`} />
+              <MediaFrame media={media} title={`${project.title} visual ${index + 2}`} naturalSize={useNaturalMediaSize} />
             </Reveal>
           ))}
         </div>
@@ -128,17 +129,24 @@ function MediaFrame({
   media,
   title,
   priority = false,
+  naturalSize = false,
 }: {
   media: ProjectMedia;
   title: string;
   priority?: boolean;
+  naturalSize?: boolean;
 }) {
+  const frameClassName = naturalSize
+    ? "mx-auto w-full max-w-[900px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_30px_120px_rgba(0,0,0,0.35)]"
+    : "mx-auto aspect-[4/5] w-full max-w-[900px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_30px_120px_rgba(0,0,0,0.35)]";
+  const mediaClassName = naturalSize ? "block h-auto w-full object-contain" : "h-full w-full object-contain";
+
   return (
-    <div className="mx-auto aspect-[4/5] w-full max-w-[900px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_30px_120px_rgba(0,0,0,0.35)]">
+    <div className={frameClassName}>
       {media.type === "video" ? (
-        <video src={media.src} className="h-full w-full object-contain" autoPlay muted loop playsInline />
+        <video src={media.src} className={mediaClassName} autoPlay muted loop playsInline />
       ) : (
-        <img src={media.src} alt={title} className="h-full w-full object-contain" loading={priority ? "eager" : "lazy"} />
+        <img src={media.src} alt={title} className={mediaClassName} loading={priority ? "eager" : "lazy"} />
       )}
     </div>
   );

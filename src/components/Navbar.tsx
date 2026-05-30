@@ -22,7 +22,9 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [loc.pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [loc.pathname]);
 
   return (
     <header
@@ -35,28 +37,12 @@ export function Navbar() {
           scrolled ? "glass rounded-full mx-4 md:mx-auto py-3 px-6" : ""
         }`}
       >
-        <Link to="/" className="flex items-center gap-3 group">
-          <span className="relative inline-flex h-7 w-7 items-center justify-center">
-            <svg viewBox="0 0 24 24" className="h-7 w-7">
-              <polygon
-                points="12,3 22,21 2,21"
-                fill="none"
-                stroke="url(#navp)"
-                strokeWidth="1.4"
-              />
-              <defs>
-                <linearGradient id="navp" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stopColor="oklch(0.85 0.16 210)" />
-                  <stop offset="0.5" stopColor="oklch(0.92 0.18 90)" />
-                  <stop offset="1" stopColor="oklch(0.65 0.25 290)" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <span className="absolute inset-0 rounded-full blur-md bg-prism opacity-0 group-hover:opacity-40 transition" />
-          </span>
-          <span className="font-display text-sm tracking-cinematic uppercase">
-            Prismo<span className="text-prism">·</span>Lab
-          </span>
+        <Link to="/" className="flex items-center">
+          <img
+            src="/images/logo.png"
+            alt="Prismo Lab"
+            className="h-10 w-auto object-contain md:h-11"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
@@ -93,7 +79,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* mobile */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
