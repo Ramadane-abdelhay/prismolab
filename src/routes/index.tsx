@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Prismo Lab — Turn Ideas Into Vision" },
-      { name: "description", content: "Cinematic creative studio by Hamza Elmansouri. Branding, art direction & immersive design." },
+      { name: "description", content: "Cinematic creative studio by Hamza Elmanssouri. Branding, art direction & immersive design." },
       { property: "og:title", content: "Prismo Lab — Turn Ideas Into Vision" },
       { property: "og:description", content: "Cinematic creative studio. Branding, art direction & immersive design." },
     ],
@@ -77,14 +77,14 @@ function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xs uppercase tracking-[0.4em] text-muted-foreground"
           >
-            Creative Identity Lab
+            Creative Lab
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 md:mt-8 font-display font-medium leading-[0.85] tracking-tighter text-[15vw] md:text-[9.5rem] lg:text-[10.5rem] xl:text-[11rem]"
+            className="mt-6 md:mt-8 font-semibold leading-[0.85] tracking-tighter text-[15vw] md:text-[9.5rem] lg:text-[10.5rem] xl:text-[11rem] [font-family:Montserrat,sans-serif]"
           >
             PRISMO
             <span className="block text-prism animate-shimmer">LAB</span>
@@ -137,7 +137,7 @@ function Home() {
         <div className="home-marquee flex w-max whitespace-nowrap font-display text-xl uppercase tracking-[0.25em] text-foreground/80 md:text-3xl">
           {Array.from({ length: 2 }).map((_, group) => (
             <div key={group} className="flex items-center gap-6 md:gap-10">
-              {["Strategy", "Symbols", "Stories", "Art Direction", "Identity Systems", "Social Presence", "Brand Worlds"].map((item) => (
+              {["Strategy", "Stories", "Art Direction", "Identity Systems", "Social Presence", "Brand Worlds"].map((item) => (
                 <Fragment key={`${group}-${item}`}>
                   <span>{item}</span>
                   <span className="text-prism leading-none">△</span>
@@ -283,7 +283,6 @@ function Home() {
                   <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
                     <div className="flex justify-between gap-5 text-[10px] uppercase tracking-[0.25em] text-foreground/80">
                       <span>{p.n}</span>
-                      <span className="text-right">{p.category}</span>
                     </div>
                     <div className="flex items-end justify-between gap-4">
                       <h3 className="font-display text-3xl md:text-4xl tracking-tight">{p.title}</h3>

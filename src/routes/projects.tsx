@@ -37,22 +37,21 @@ function Projects() {
       <section className="px-6 pb-32">
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-8 md:gap-12">
           {projects.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 2) * 0.1} className={i % 3 === 0 ? "md:col-span-2" : ""}>
+            <Reveal key={p.slug} delay={(i % 2) * 0.1}>
               <Link
                 to="/projects/$slug"
                 params={{ slug: p.slug }}
                 className="group block relative overflow-hidden rounded-3xl border border-white/10 bg-background"
               >
                 <div
-                  className={`w-full transition duration-700 group-hover:scale-105 ${i % 3 === 0 ? "aspect-[16/7]" : "aspect-[5/6]"}`}
+                  className="aspect-[5/6] w-full transition duration-700 group-hover:scale-105"
                 >
                   <img src={p.main} alt={p.title} className="h-full w-full object-cover" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/15 to-background/20" />
                 <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
                   <div className="flex justify-between gap-5 text-xs uppercase tracking-[0.3em] text-foreground/80">
-                    <span>{p.n} - {p.year}</span>
-                    <span className="text-right">{p.category}</span>
+                    <span>{p.n}</span>
                   </div>
                   <div className="flex items-end justify-between gap-4">
                     <h2 className="font-display text-3xl md:text-5xl tracking-tight">{p.title}</h2>

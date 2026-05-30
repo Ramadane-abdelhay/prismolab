@@ -61,7 +61,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Prismo Lab — Turning Ideas Into Vision" },
-      { name: "description", content: "Prismo Lab is the creative studio of graphic designer Hamza Elmansouri — branding, art direction, and immersive visual design." },
+      { name: "description", content: "Prismo Lab is the creative studio of graphic designer Hamza Elmanssouri - branding, art direction, and immersive visual design." },
       { name: "author", content: "Prismo Lab" },
       { property: "og:title", content: "Prismo Lab — Turning Ideas Into Vision" },
       { property: "og:description", content: "Branding, art direction & immersive visual design." },

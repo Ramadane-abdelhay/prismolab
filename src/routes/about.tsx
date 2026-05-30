@@ -74,19 +74,24 @@ function About() {
       <section className="px-6 py-28">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12 md:items-start">
           <Reveal className="md:col-span-5">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ The force</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ The vision</p>
             <h2 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
-              A spark becomes<br />
-              <span className="text-prism">a world.</span>
+              The way<br />
+              <span className="text-prism">I see.</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.12} className="space-y-7 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7">
             <p>
-              Inspired by the prism, Prismo transforms one small spark into many layers: identity, story, emotion, atmosphere, and digital presence.
+              Prismo is the name I gave to the way I see.
             </p>
             <p className="text-muted-foreground">
-              Prismo Lab exists for brands, artists, and projects that need more than design. They need a visual world with its own mood, rhythm, and meaning.
+              I’m Hamza Elmanssouri, the creative mind behind Prismo Lab. For me, Prismo is a philosophy: a way of looking beyond the surface of an idea to find its feeling, its story, and the world it could become.
+            </p>
+            <p className="font-display text-2xl leading-tight text-foreground md:text-3xl">
+              Prismo is the vision.
+              <br />
+              The Lab is where that vision takes form.
             </p>
           </Reveal>
         </div>

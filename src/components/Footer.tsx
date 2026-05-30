@@ -112,17 +112,17 @@ export function Footer() {
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">Manifesto</p>
             <p className="leading-relaxed text-foreground/80">
-              Ideas arrive as signals.
+              Ideas arrive unfinished.
               <br />
-              We shape them into symbols.
+              Prismo gives them form.
               <br />
-              Then we build the world around them.
+              The Lab turns them into worlds.
             </p>
           </div>
         </div>
 
         <div className="mt-16 border-t border-white/5 pt-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          <span>&copy; 2026 Prismo Lab. Built for brands with a hidden world.</span>
+          <span>&copy; 2026 Prismo Lab. Built for brands that want to be remembered.</span>
         </div>
       </div>
     </footer>
