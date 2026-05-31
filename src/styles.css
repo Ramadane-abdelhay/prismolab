@@ -160,6 +160,14 @@
     0%,100% { opacity: 0.6; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.05); }
   }
+  @keyframes signal-breathe {
+    0%,100% { transform: scale(0.92) rotate(-7deg); opacity: 0.68; }
+    50% { transform: scale(1.1) rotate(7deg); opacity: 1; }
+  }
+  @keyframes label-signal-breathe {
+    0%,100% { transform: translate(0, -50%) scale(0.92) rotate(-7deg); opacity: 0.78; }
+    50% { transform: translate(0, -50%) scale(1.1) rotate(7deg); opacity: 1; }
+  }
   @keyframes spin-slow { to { transform: rotate(360deg); } }
   @keyframes marquee-left {
     from { transform: translateX(0); }
@@ -175,6 +183,73 @@
     animation: shimmer-reverse 6s linear infinite;
   }
   .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+  .animate-signal-breathe { animation: signal-breathe 3.6s ease-in-out infinite; }
   .animate-spin-slow { animation: spin-slow 30s linear infinite; }
   .home-marquee { animation: marquee-left 28s linear infinite; }
+
+  .signal-label {
+    content: "";
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 2.75rem;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    will-change: clip-path;
+    transition:
+      clip-path 1000ms var(--ease-cinematic),
+      opacity 220ms ease;
+  }
+  .signal-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.84rem;
+    height: 1.84rem;
+    background: url("/images/symbol.svg") center / contain no-repeat;
+    opacity: 0;
+    transform: translate(10.5rem, -50%) scale(0.45) rotate(210deg);
+    transform-origin: center;
+    transition:
+      opacity 220ms ease,
+      transform 950ms var(--ease-cinematic),
+      filter 600ms ease;
+    filter: brightness(0) invert(1);
+  }
+  .signal-label.signal-label-active {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  .signal-label.signal-label-active::before {
+    opacity: 0.92;
+    transform: translate(0, -50%) scale(1) rotate(0deg);
+    animation: label-signal-breathe 4.6s ease-in-out 950ms infinite;
+  }
+  @media (max-width: 767px) {
+    .signal-label {
+      padding-left: 2.35rem;
+    }
+    .signal-label::before {
+      width: 1.66rem;
+      height: 1.66rem;
+      transform: translate(7rem, -50%) scale(0.45) rotate(210deg);
+    }
+    .signal-label.signal-label-active::before {
+      transform: translate(0, -50%) scale(1) rotate(0deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .signal-label {
+      padding-left: 0;
+      clip-path: none;
+      opacity: 1;
+    }
+    .signal-label::before {
+      display: none;
+    }
+    .animate-signal-breathe {
+      animation: none;
+    }
+  }
 }

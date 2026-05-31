@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { MouseGlow } from "../components/MouseGlow";
+import { LivingSignal, SectionSignalObserver } from "../components/LivingSignal";
 
 function NotFoundComponent() {
   return (
@@ -106,6 +107,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen bg-background text-foreground noise">
         <MouseGlow />
+        <LivingSignal />
+        <SectionSignalObserver />
         <Navbar />
         <main className="relative z-10">
           <Outlet />
