@@ -51,10 +51,12 @@ export function PrismScene({ className = "" }: { className?: string }) {
         className="absolute top-1/2 left-1/2 h-[86px] w-[54%] -translate-y-1/2 origin-left md:left-[58%] md:h-[100px] md:w-[42%] xl:h-[108px]"
         style={{
           clipPath: "polygon(0px 50%, 100% 5%, 100% 95%, 0px 52%)",
+          WebkitClipPath: "polygon(0px 50%, 100% 5%, 100% 95%, 0px 52%)",
           background:
-            "linear-gradient(361deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 250, 255, 0.82) 11%, oklch(0.86 0.12 210 / 0.54) 24%, oklch(0.86 0.17 160 / 0.52) 38%, oklch(0.9 0.16 96 / 0.5) 52%, oklch(0.8 0.17 54 / 0.52) 66%, oklch(0.72 0.24 346 / 0.54) 81%, oklch(0.66 0.22 292 / 0.45) 94%, transparent 100%)",
+            "linear-gradient(361deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 250, 255, 0.82) 11%, rgba(111, 215, 255, 0.54) 24%, rgba(145, 242, 124, 0.52) 38%, rgba(255, 230, 107, 0.5) 52%, rgba(255, 193, 77, 0.52) 66%, rgba(255, 79, 175, 0.54) 81%, rgba(141, 92, 255, 0.45) 94%, transparent 100%)",
           filter: "blur(18px)",
           maskImage: "linear-gradient(180deg, transparent 0%, black 30%, black 70%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(180deg, transparent 0%, black 30%, black 70%, transparent 100%)",
           mixBlendMode: "screen",
         }}
       />

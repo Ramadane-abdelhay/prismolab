@@ -11,7 +11,7 @@ export function MouseGlow() {
     <div
       className="pointer-events-none fixed inset-0 z-[1] mix-blend-screen"
       style={{
-        background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, oklch(0.65 0.25 290 / 0.12), transparent 50%)`,
+        background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, rgba(141, 92, 255, 0.12), transparent 50%)`,
       }}
     />
   );

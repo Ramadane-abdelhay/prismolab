@@ -97,6 +97,49 @@
   --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+@supports not (color: oklch(0.5 0 0)) {
+  :root {
+    --background: #05060a;
+    --foreground: #f4f6fb;
+    --deep-navy: #11152b;
+    --midnight: #171b35;
+
+    --card: #0b0d18;
+    --card-foreground: #f4f6fb;
+    --popover: #0b0d18;
+    --popover-foreground: #f4f6fb;
+
+    --primary: #f4f6fb;
+    --primary-foreground: #07080d;
+    --secondary: #20243d;
+    --secondary-foreground: #f4f6fb;
+    --muted: #181c31;
+    --muted-foreground: #9ca6bb;
+    --accent: #20243d;
+    --accent-foreground: #f4f6fb;
+    --destructive: #e5484d;
+    --destructive-foreground: #ffffff;
+    --border: rgb(255 255 255 / 8%);
+    --input: rgb(255 255 255 / 10%);
+    --ring: #6ac8ff;
+
+    --prism-cyan: #6fd7ff;
+    --prism-violet: #8d5cff;
+    --prism-magenta: #ff4faf;
+    --prism-amber: #ffc14d;
+    --prism-lime: #91f27c;
+
+    --gradient-prism: linear-gradient(90deg, #6fd7ff, #91f27c, #ffe66b, #ffc14d, #ff4faf, #8d5cff);
+    --gradient-aurora: radial-gradient(ellipse 70% 58% at 4% 48%, rgb(255 79 175 / 22%), transparent 68%),
+                       radial-gradient(ellipse 68% 56% at 48% 40%, rgb(141 92 255 / 26%), transparent 66%),
+                       radial-gradient(ellipse 74% 62% at 94% 50%, rgb(111 215 255 / 22%), transparent 68%),
+                       radial-gradient(ellipse at 54% 42%, rgb(255 255 255 / 10%), transparent 58%);
+
+    --shadow-glow: 0 0 60px -10px rgb(111 215 255 / 50%);
+    --shadow-prism: 0 0 80px -20px rgb(255 79 175 / 60%), 0 0 120px -40px rgb(141 92 255 / 50%);
+  }
+}
+
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
@@ -194,6 +237,7 @@
     align-items: center;
     padding-left: 2.75rem;
     clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
     opacity: 0;
     will-change: clip-path;
     transition:
@@ -219,6 +263,7 @@
   }
   .signal-label.signal-label-active {
     clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
     opacity: 1;
   }
   .signal-label.signal-label-active::before {
@@ -243,6 +288,7 @@
     .signal-label {
       padding-left: 0;
       clip-path: none;
+      -webkit-clip-path: none;
       opacity: 1;
     }
     .signal-label::before {
