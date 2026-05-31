@@ -211,6 +211,15 @@
     0%,100% { transform: translateX(0) scale(0.92) rotate(-7deg); opacity: 0.78; }
     50% { transform: translateX(0) scale(1.1) rotate(7deg); opacity: 1; }
   }
+  @keyframes label-symbol-arrive {
+    0% { opacity: 0; transform: translateX(10.5rem) scale(0.45) rotate(210deg); }
+    78% { opacity: 0.92; transform: translateX(0) scale(1) rotate(0deg); }
+    100% { opacity: 0.92; transform: translateX(0) scale(1) rotate(0deg); }
+  }
+  @keyframes label-text-arrive {
+    0%,58% { opacity: 0; transform: translateX(-0.75rem); }
+    78%,100% { opacity: 1; transform: translateX(0); }
+  }
   @keyframes spin-slow { to { transform: rotate(360deg); } }
   @keyframes marquee-left {
     from { transform: translateX(0); }
@@ -249,7 +258,7 @@
     transform-origin: center;
     transition:
       opacity 260ms ease,
-      transform 950ms var(--ease-cinematic),
+      transform 1250ms var(--ease-cinematic),
       filter 600ms ease;
     filter: brightness(0) invert(1);
   }
@@ -258,8 +267,8 @@
     opacity: 0;
     transform: translateX(-0.75rem);
     transition:
-      opacity 520ms ease 210ms,
-      transform 780ms var(--ease-cinematic) 160ms;
+      opacity 640ms ease 260ms,
+      transform 940ms var(--ease-cinematic) 200ms;
   }
   .signal-label.signal-label-active {
     opacity: 1;
@@ -267,11 +276,14 @@
   .signal-label.signal-label-active .signal-label-symbol {
     opacity: 0.92;
     transform: translateX(0) scale(1) rotate(0deg);
-    animation: label-signal-breathe 4.6s ease-in-out 950ms infinite;
+    animation:
+      label-symbol-arrive 1250ms var(--ease-cinematic) both,
+      label-signal-breathe 4.6s ease-in-out 1400ms infinite;
   }
   .signal-label.signal-label-active .signal-label-text {
     opacity: 1;
     transform: translateX(0);
+    animation: label-text-arrive 1250ms var(--ease-cinematic) both;
   }
   @media (max-width: 767px) {
     .signal-label {

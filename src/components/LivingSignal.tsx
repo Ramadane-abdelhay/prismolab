@@ -65,6 +65,14 @@ export function SectionSignalObserver() {
     const labelSelector =
       "main p[class*='uppercase'][class*='tracking-[0.4em]'], footer p[class*='uppercase'][class*='tracking-[0.4em]']";
     const labels = new Set<HTMLElement>();
+    let frameId = 0;
+
+    const scheduleVisibleUpdate = () => {
+      window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(() => {
+        frameId = window.requestAnimationFrame(updateVisibleLabels);
+      });
+    };
 
     const collectLabels = () => {
       document.querySelectorAll<HTMLElement>(labelSelector).forEach((label) => {
@@ -87,7 +95,7 @@ export function SectionSignalObserver() {
         label.classList.add("signal-label");
         observer.observe(label);
       });
-      updateVisibleLabels();
+      scheduleVisibleUpdate();
     };
 
     const updateVisibleLabels = () => {
@@ -102,7 +110,9 @@ export function SectionSignalObserver() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            window.setTimeout(() => entry.target.classList.add("signal-label-active"), 120);
+            window.requestAnimationFrame(() => {
+              window.requestAnimationFrame(() => entry.target.classList.add("signal-label-active"));
+            });
           } else {
             entry.target.classList.remove("signal-label-active");
           }
@@ -114,7 +124,7 @@ export function SectionSignalObserver() {
     const mutationObserver = new MutationObserver(collectLabels);
 
     collectLabels();
-    window.setTimeout(collectLabels, 180);
+    window.setTimeout(collectLabels, 240);
     mutationObserver.observe(document.body, { childList: true, subtree: true });
     window.addEventListener("scroll", updateVisibleLabels, { passive: true });
     window.addEventListener("resize", updateVisibleLabels);
@@ -122,6 +132,7 @@ export function SectionSignalObserver() {
     return () => {
       observer.disconnect();
       mutationObserver.disconnect();
+      window.cancelAnimationFrame(frameId);
       window.removeEventListener("scroll", updateVisibleLabels);
       window.removeEventListener("resize", updateVisibleLabels);
       labels.forEach((label) => {
