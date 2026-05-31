@@ -70,6 +70,20 @@ export function SectionSignalObserver() {
       document.querySelectorAll<HTMLElement>(labelSelector).forEach((label) => {
         if (labels.has(label)) return;
         labels.add(label);
+        const text = label.textContent ?? "";
+        label.textContent = "";
+
+        const symbol = document.createElement("img");
+        symbol.src = "/images/symbol.svg";
+        symbol.alt = "";
+        symbol.setAttribute("aria-hidden", "true");
+        symbol.className = "signal-label-symbol";
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "signal-label-text";
+        textSpan.textContent = text;
+
+        label.append(symbol, textSpan);
         label.classList.add("signal-label");
         observer.observe(label);
       });
@@ -111,6 +125,8 @@ export function SectionSignalObserver() {
       window.removeEventListener("scroll", updateVisibleLabels);
       window.removeEventListener("resize", updateVisibleLabels);
       labels.forEach((label) => {
+        const text = label.querySelector(".signal-label-text")?.textContent ?? label.textContent ?? "";
+        label.textContent = text;
         label.classList.remove("signal-label", "signal-label-active");
       });
     };
