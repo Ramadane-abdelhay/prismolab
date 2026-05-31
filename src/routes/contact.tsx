@@ -52,7 +52,7 @@ function Contact() {
   ];
 
   return (
-    <section className="relative min-h-screen pt-40 pb-32 px-6 overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden px-5 pb-32 pt-36 sm:px-6 md:pt-40">
       <div className="absolute inset-0 bg-aurora opacity-60" />
       <Starfield count={80} />
       <div className="relative mx-auto max-w-6xl">
@@ -62,8 +62,8 @@ function Contact() {
           your <span className="text-prism italic font-light">vision.</span>
         </Reveal>
 
-        <div className="mt-20 grid md:grid-cols-12 gap-12">
-          <Reveal className="md:col-span-5 space-y-6">
+        <div className="mt-14 grid min-w-0 gap-10 md:mt-20 md:grid-cols-12 md:gap-12">
+          <Reveal className="min-w-0 space-y-6 md:col-span-5">
             <div className="grid gap-4">
               {contactLinks.map(({ label, value, href, Icon }) => (
                 <a
@@ -71,15 +71,15 @@ function Contact() {
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group flex items-center justify-between gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-white/30 hover:bg-white/[0.06] hover:shadow-glow"
+                  className="group flex min-w-0 items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-white/30 hover:bg-white/[0.06] hover:shadow-glow sm:gap-5 sm:p-5"
                 >
-                  <span className="flex items-center gap-4">
-                    <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-foreground">
+                  <span className="flex min-w-0 items-center gap-3 sm:gap-4">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 text-foreground sm:h-11 sm:w-11">
                       <Icon size={18} />
                     </span>
-                    <span>
+                    <span className="min-w-0">
                       <span className="block text-xs uppercase tracking-[0.3em] text-muted-foreground">{label}</span>
-                      <span className="mt-1 block font-display text-xl">{value}</span>
+                      <span className="mt-1 block break-words font-display text-base leading-tight sm:text-xl">{value}</span>
                     </span>
                   </span>
                   <ArrowUpRight size={18} className="shrink-0 text-muted-foreground transition group-hover:rotate-45 group-hover:text-white" />
@@ -87,15 +87,15 @@ function Contact() {
               ))}
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="min-w-0 rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-5">
               <p className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
                 <MapPin size={15} />
                 Location
               </p>
-              <p className="font-display text-xl">Morocco &#9651; Worldwide</p>
+              <p className="font-display text-lg sm:text-xl">Morocco &#9651; Worldwide</p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="min-w-0 rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-5">
               <p className="mb-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">Elsewhere</p>
               <div className="grid gap-3">
                 {socialLinks.map((link) => (
@@ -114,10 +114,10 @@ function Contact() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.15} className="md:col-span-7">
+          <Reveal delay={0.15} className="min-w-0 md:col-span-7">
             <form
               onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-              className="glass rounded-3xl p-8 md:p-10 space-y-8"
+              className="glass min-w-0 space-y-8 rounded-3xl p-5 sm:p-8 md:p-10"
             >
               <Field label="Your name" placeholder="Your name" required />
               <Field label="Email" type="email" placeholder="you@studio.com" required />
