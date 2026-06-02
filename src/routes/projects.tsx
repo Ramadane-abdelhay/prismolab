@@ -6,10 +6,10 @@ import { projects } from "../lib/projects";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects - Prismo Lab" },
-      { name: "description", content: "A digital exhibition of selected design work by Prismo Lab." },
-      { property: "og:title", content: "Projects - Prismo Lab" },
-      { property: "og:description", content: "A digital exhibition of selected design work." },
+      { title: "Projects | Prismo Lab" },
+      { name: "description", content: "Selected brand identity, campaign, and visual direction work by Prismo Lab." },
+      { property: "og:title", content: "Projects | Prismo Lab" },
+      { property: "og:description", content: "Selected work by Prismo Lab." },
     ],
   }),
   component: Projects,
@@ -26,7 +26,7 @@ function Projects() {
     <>
       <section className="pt-44 pb-16 px-6">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Exhibition</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Exhibition</p>
           <Reveal as="h1" className="mt-6 font-display text-[14vw] md:text-[10rem] leading-[0.85] tracking-tighter">
             Selected<br />
             <span className="text-prism">works.</span>
@@ -70,13 +70,13 @@ function Projects() {
         <div className="absolute inset-0 bg-aurora opacity-25" />
         <div className="relative mx-auto max-w-5xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Your world next</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Your world next</p>
             <h2 className="mt-6 font-display text-5xl leading-[0.95] tracking-tighter md:text-8xl">
               Have a spark<br />
               <span className="text-prism">waiting for shape?</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75">
-              Bring the idea, product, brand, or visual direction. Prismo will help turn it into a world people can feel.
+              Bring the idea, product, or brand. Prismo will help shape a clear identity around it.
             </p>
             <Link
               to="/contact"

@@ -43,7 +43,7 @@
 :root {
   --radius: 0.5rem;
 
-  /* Cinematic space palette */
+  /* Space palette */
   --background: oklch(0.04 0.01 260);          /* near-black */
   --foreground: oklch(0.97 0.01 250);          /* soft white */
   --deep-navy: oklch(0.10 0.05 260);
@@ -277,13 +277,13 @@
     opacity: 0.92;
     transform: translateX(0) scale(1) rotate(0deg);
     animation:
-      label-symbol-arrive 1250ms var(--ease-cinematic) both,
-      label-signal-breathe 4.6s ease-in-out 1400ms infinite;
+      label-symbol-arrive 1450ms var(--ease-cinematic) both,
+      label-signal-breathe 4.6s ease-in-out 1600ms infinite;
   }
   .signal-label.signal-label-active .signal-label-text {
     opacity: 1;
     transform: translateX(0);
-    animation: label-text-arrive 1250ms var(--ease-cinematic) both;
+    animation: label-text-arrive 1450ms var(--ease-cinematic) both;
   }
   @media (max-width: 767px) {
     .signal-label {

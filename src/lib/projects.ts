@@ -27,13 +27,13 @@ export const projects: Project[] = [
   {
     slug: "project-1",
     n: "01",
-    title: "Project 1",
-    category: "Identity / Strategy / Art Direction",
+    title: "Erene Haven",
+    category: "Luxury Identity / Monogram / Art Direction",
     year: "2026",
-    client: "Selected Work",
-    role: "Art Direction, Visual System",
+    client: "Erene Haven",
+    role: "Identity, Monogram, Visual System",
     intro:
-      "A complete identity shaped around one strong symbol, a clear message, and a visual system built to grow.",
+      "A serene identity system built around a refined monogram, quiet luxury, and a soft material atmosphere.",
     main: "/images/project-1/main.png",
     dominantColor: "#816E56",
     media: makeMedia("project-1", [
@@ -63,13 +63,13 @@ export const projects: Project[] = [
   {
     slug: "project-2",
     n: "02",
-    title: "Project 2",
-    category: "Campaign Direction",
+    title: "Yallahsurf Vibe",
+    category: "Surf Campaign / Visual Identity",
     year: "2026",
-    client: "Selected Work",
-    role: "Creative Direction, Layout",
+    client: "Yallahsurf Vibe",
+    role: "Identity, Campaign Direction",
     intro:
-      "A visual campaign designed to make the brand feel active, emotional, and memorable.",
+      "A surf-inspired visual direction shaped around Moroccan texture, coastal rhythm, and a memorable mark.",
     main: "/images/project-2/main.png",
     dominantColor: "#533927",
     media: makeMedia("project-2", [
@@ -96,13 +96,13 @@ export const projects: Project[] = [
   {
     slug: "project-3",
     n: "03",
-    title: "Project 3",
-    category: "Identity / Social World",
+    title: "Prismo Lab Identity",
+    category: "Studio Identity / Symbol System",
     year: "2026",
-    client: "Selected Work",
-    role: "Brand, Motion, Direction",
+    client: "Prismo Lab",
+    role: "Brand Identity, Symbol, Storytelling",
     intro:
-      "A soft, minimal cafe identity built around warmth, simplicity, and one memorable symbol.",
+      "A personal studio identity built around the prism symbol, deep blue light, and the idea of turning vision into form.",
     main: "/images/project-3/main.png",
     dominantColor: "#00063A",
     media: makeMedia("project-3", ["main.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.mp4"]),
@@ -111,12 +111,12 @@ export const projects: Project[] = [
     slug: "layers-coffe-shop",
     n: "04",
     title: "Layers Coffee Shop",
-    category: "Packaging / Atmosphere / Art Direction",
+    category: "Cafe Identity / Packaging / Atmosphere",
     year: "2026",
     client: "Layers Coffee Shop",
-    role: "Identity, Social Content",
+    role: "Identity, Packaging, Social Content",
     intro:
-      "A fragrance world shaped through bottle concepts, natural forms, packaging direction, and atmosphere.",
+      "A warm coffee shop identity shaped through earthy color, packaging moments, and a calm social rhythm.",
     main: "/images/Layers-coffe-shop/1.jpg",
     dominantColor: "#42210D",
     media: makeMedia("Layers-coffe-shop", [
@@ -169,12 +169,12 @@ export const projects: Project[] = [
     slug: "orea-coastal-parfum",
     n: "06",
     title: "Orea Coastal Parfum",
-    category: "Character / Symbol / Visual Universe",
+    category: "Perfume Concept / Packaging / Art Direction",
     year: "2026",
     client: "Orea",
-    role: "Character, Symbol, Visual Universe",
+    role: "Bottle Concept, Packaging, Visual Direction",
     intro:
-      "A character and symbol system built as a visual universe with its own rhythm, marks, and presence.",
+      "A perfume concept inspired by organic forms, sea texture, and soft luxury.",
     main: "/images/orea-coastal-parfum/1.jpg",
     dominantColor: "#A5A486",
     media: makeMedia("orea-coastal-parfum", [

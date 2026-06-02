@@ -37,7 +37,7 @@ export function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-10">
         <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-          / PRISMO LAB
+          PRISMO LAB
         </p>
 
         <div className="relative mt-6 w-full" style={{ aspectRatio: "5000 / 693.09" }}>

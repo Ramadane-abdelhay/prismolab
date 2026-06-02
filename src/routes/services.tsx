@@ -6,9 +6,9 @@ import { Starfield } from "../components/Starfield";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services - Prismo Lab" },
+      { title: "Services | Prismo Lab" },
       { name: "description", content: "Brand identity, art direction, social content, digital experiences, packaging, and visual worlds by Prismo Lab." },
-      { property: "og:title", content: "Services - Prismo Lab" },
+      { property: "og:title", content: "Services | Prismo Lab" },
       { property: "og:description", content: "What Prismo creates." },
     ],
   }),
@@ -71,7 +71,7 @@ function Services() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Services</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Services</p>
             <Reveal as="h1" className="mt-6 font-display text-[16vw] leading-[0.84] tracking-tighter md:text-[9rem] lg:text-[10rem]">
               What Prismo<br />
               <span className="inline-block pr-5 italic font-light text-prism">creates.</span>
@@ -80,7 +80,7 @@ function Services() {
 
           <Reveal delay={0.12} className="space-y-6 text-lg leading-relaxed text-foreground/80 lg:col-span-4">
             <p>
-              Services are not separate boxes. They are layers of one visual world: identity, atmosphere, content, product, and digital presence.
+              Each service connects back to one clear goal: a brand that feels consistent, memorable, and ready to live everywhere.
             </p>
             <Link
               to="/contact"
@@ -113,7 +113,7 @@ function Services() {
         <div className="mx-auto max-w-7xl">
           <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Capabilities</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Capabilities</p>
               <h2 className="mt-5 font-display text-4xl leading-[1] tracking-tight md:text-6xl">
                 Six ways to shape the light.
               </h2>
@@ -153,7 +153,7 @@ function Services() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.07),transparent_62%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Collaboration</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Collaboration</p>
             <h2 className="mt-5 font-display text-4xl leading-[1] tracking-tight md:text-6xl">
               From spark to system.
             </h2>
@@ -176,7 +176,7 @@ function Services() {
       <section className="px-6 py-32">
         <div className="mx-auto max-w-5xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Start</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Start</p>
             <h2 className="mt-6 font-display text-5xl leading-[0.95] tracking-tighter md:text-8xl">
               Bring the spark.
               <br />

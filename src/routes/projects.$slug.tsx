@@ -11,12 +11,12 @@ export const Route = createFileRoute("/projects/$slug")({
   },
   head: ({ params }) => {
     const project = getProject(params.slug);
-    if (!project) return { meta: [{ title: "Project - Prismo Lab" }] };
+    if (!project) return { meta: [{ title: "Project | Prismo Lab" }] };
     return {
       meta: [
-        { title: `${project.title} - Prismo Lab` },
+        { title: `${project.title} | Prismo Lab` },
         { name: "description", content: project.intro },
-        { property: "og:title", content: `${project.title} - Prismo Lab` },
+        { property: "og:title", content: `${project.title} | Prismo Lab` },
         { property: "og:description", content: project.intro },
       ],
     };
@@ -57,7 +57,7 @@ function ProjectPage() {
 
       <section className="relative z-10 px-6 py-16 mx-auto max-w-7xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">{project.n} - Project story</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Project story {project.n}</p>
           <div className="grid md:grid-cols-12 gap-8 mt-6 items-end">
             <h1 className="md:col-span-7 font-display text-6xl md:text-9xl tracking-tighter leading-[0.85]">
               {project.title}
@@ -178,9 +178,8 @@ function MediaFrame({
 
 function Meta({ project }: { project: Project }) {
   return (
-    <dl className="grid grid-cols-2 gap-5 text-xs uppercase tracking-[0.25em] text-muted-foreground border-y border-white/10 py-5">
+    <dl className="grid grid-cols-1 gap-5 text-xs uppercase tracking-[0.25em] text-muted-foreground border-y border-white/10 py-5 sm:grid-cols-3">
       <div><dt>Client</dt><dd className="mt-2 text-foreground normal-case tracking-normal">{project.client}</dd></div>
-      <div><dt>Year</dt><dd className="mt-2 text-foreground">{project.year}</dd></div>
       <div><dt>Category</dt><dd className="mt-2 text-foreground normal-case tracking-normal">{project.category}</dd></div>
       <div><dt>Role</dt><dd className="mt-2 text-foreground normal-case tracking-normal">{project.role}</dd></div>
     </dl>
@@ -195,7 +194,7 @@ function NextProject({ next }: { next: Project }) {
         params={{ slug: next.slug }}
         className="group block border-t border-white/10 pt-10"
       >
-        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Next project</p>
+        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Next project</p>
         <div className="mt-4 flex items-end justify-between gap-6">
           <h3 className="font-display text-5xl md:text-7xl tracking-tighter group-hover:text-prism transition">{next.title}</h3>
           <span className="h-14 w-14 shrink-0 rounded-full border border-white/30 grid place-items-center group-hover:bg-white group-hover:text-background transition">

@@ -7,10 +7,10 @@ import { ArrowUpRight, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact - Prismo Lab" },
-      { name: "description", content: "Tell us your vision. Reach out to Prismo Lab to start a project." },
-      { property: "og:title", content: "Contact - Prismo Lab" },
-      { property: "og:description", content: "Tell us your vision." },
+      { title: "Contact | Prismo Lab" },
+      { name: "description", content: "Contact Prismo Lab to start a brand identity, art direction, or digital project." },
+      { property: "og:title", content: "Contact | Prismo Lab" },
+      { property: "og:description", content: "Start a project with Prismo Lab." },
     ],
   }),
   component: Contact,
@@ -56,7 +56,7 @@ function Contact() {
       <div className="absolute inset-0 bg-aurora opacity-60" />
       <Starfield count={80} />
       <div className="relative mx-auto max-w-6xl">
-        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">/ Contact</p>
+        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Contact</p>
         <Reveal as="h1" className="mt-6 font-display text-[14vw] md:text-[10rem] leading-[0.85] tracking-tighter">
           Tell me<br />
           your <span className="text-prism italic font-light">vision.</span>
@@ -126,7 +126,7 @@ function Contact() {
                 <span className="block text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">Vision</span>
                 <textarea
                   rows={4}
-                  placeholder="Describe the feeling, the world, the light..."
+                  placeholder="Tell me what you are building, what it should feel like, and where it needs to live."
                   className="w-full bg-transparent border-b border-white/15 py-3 outline-none text-lg focus:border-white/60 resize-none"
                 />
               </label>
@@ -134,7 +134,7 @@ function Contact() {
                 type="submit"
                 className="group inline-flex items-center gap-3 rounded-full bg-foreground text-background px-6 py-3 text-xs uppercase tracking-[0.25em] hover:shadow-prism transition"
               >
-                {sent ? "Transmission received" : "Send transmission"}
+                {sent ? "Message received" : "Send message"}
                 <Send size={14} className="group-hover:translate-x-1 transition" />
               </button>
             </form>

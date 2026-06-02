@@ -10,10 +10,10 @@ import { featuredProjects } from "../lib/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Prismo Lab — Turn Ideas Into Vision" },
-      { name: "description", content: "Cinematic creative studio by Hamza Elmanssouri. Branding, art direction & immersive design." },
-      { property: "og:title", content: "Prismo Lab — Turn Ideas Into Vision" },
-      { property: "og:description", content: "Cinematic creative studio. Branding, art direction & immersive design." },
+      { title: "Prismo Lab | Turn Ideas Into Vision" },
+      { name: "description", content: "Creative studio by Hamza Elmanssouri for brand identity, art direction, and digital presence." },
+      { property: "og:title", content: "Prismo Lab | Turn Ideas Into Vision" },
+      { property: "og:description", content: "Brand identity, art direction, and digital presence by Prismo Lab." },
     ],
   }),
   component: Home,
@@ -314,7 +314,7 @@ function Home() {
               Prismo believes every brand carries a hidden shape.
             </p>
             <p className="text-muted-foreground">
-              The work is to find it. Name it. Shape it. Give it a symbol. Give it a rhythm. Give it a feeling people can remember.
+              The work is to make that shape clear: a name, a mark, a rhythm, and a feeling people remember.
               <br /><br />
               A brand becomes powerful when people can recognize its feeling without needing everything explained.
             </p>
@@ -335,7 +335,7 @@ function Home() {
               <span className="text-prism animate-shimmer">your idea could become.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75">
-              Bring the name, product, dream, or unfinished thought. Prismo Lab will help shape it into strategy, identity, story, and a visual direction.
+              Bring the name, product, or early idea. Prismo Lab will help shape the strategy, identity, story, and visual direction around it.
             </p>
             <Link
               to="/contact"
