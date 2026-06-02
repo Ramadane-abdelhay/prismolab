@@ -50,7 +50,7 @@ export function LivingSignal() {
       <img
         src="/images/symbol.svg"
         alt=""
-        className="h-full w-full animate-signal-breathe object-contain"
+        className="theme-cursor-symbol h-full w-full animate-signal-breathe object-contain"
         style={{
           filter:
             "drop-shadow(0 0 8px rgba(255,255,255,0.9)) drop-shadow(0 0 22px rgba(255,255,255,0.35))",

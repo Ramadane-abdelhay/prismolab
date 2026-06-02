@@ -15,6 +15,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { MouseGlow } from "../components/MouseGlow";
 import { LivingSignal, SectionSignalObserver } from "../components/LivingSignal";
+import { Preloader } from "../components/Preloader";
 
 function NotFoundComponent() {
   return (
@@ -89,8 +90,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('prismo-theme');document.documentElement.classList.toggle('light',t==='light');document.documentElement.classList.toggle('dark',t!=='light')}catch(e){}",
+          }}
+        />
         <HeadContent />
       </head>
       <body>
@@ -109,6 +116,7 @@ function RootComponent() {
         <MouseGlow />
         <LivingSignal />
         <SectionSignalObserver />
+        <Preloader />
         <Navbar />
         <main className="relative z-10">
           <Outlet />

@@ -9,7 +9,7 @@ export function MouseGlow() {
   }, []);
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[1] mix-blend-screen"
+      className="theme-mouse-glow pointer-events-none fixed inset-0 z-[1] mix-blend-screen"
       style={{
         background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, rgba(141, 92, 255, 0.12), transparent 50%)`,
       }}

@@ -9,7 +9,7 @@ export function PrismScene({ className = "" }: { className?: string }) {
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-        className="absolute top-1/2 left-0 h-[2px] w-1/2 origin-left md:w-[58%]"
+        className="theme-white-beam absolute top-1/2 left-0 h-[2px] w-1/2 origin-left md:w-[58%]"
         style={{
           background: "linear-gradient(90deg, transparent, white 60%, white)",
           boxShadow: "0 0 22px 3px rgba(255,255,255,0.9), 0 0 44px 5px rgba(180,220,255,0.6)",
@@ -22,7 +22,7 @@ export function PrismScene({ className = "" }: { className?: string }) {
         animate={{ opacity: 1, scale: 1, rotate: 0 }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         viewBox="0 0 200 200"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[44%] w-[44%] drop-shadow-[0_0_40px_rgba(160,200,255,0.5)] md:left-[58%] md:h-[46%] md:w-[46%] xl:h-[50%] xl:w-[50%]"
+        className="theme-prism-svg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[44%] w-[44%] drop-shadow-[0_0_40px_rgba(160,200,255,0.5)] md:left-[58%] md:h-[46%] md:w-[46%] xl:h-[50%] xl:w-[50%]"
       >
         <defs>
           <linearGradient id="prismFace" x1="0" y1="0" x2="1" y2="1">
@@ -48,7 +48,7 @@ export function PrismScene({ className = "" }: { className?: string }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.68 }}
         transition={{ duration: 1.4, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-1/2 left-1/2 h-[86px] w-[54%] -translate-y-1/2 origin-left md:left-[58%] md:h-[100px] md:w-[42%] xl:h-[108px]"
+        className="theme-rainbow-beam absolute top-1/2 left-1/2 h-[86px] w-[54%] -translate-y-1/2 origin-left md:left-[58%] md:h-[100px] md:w-[42%] xl:h-[108px]"
         style={{
           clipPath: "polygon(0px 50%, 100% 5%, 100% 95%, 0px 52%)",
           WebkitClipPath: "polygon(0px 50%, 100% 5%, 100% 95%, 0px 52%)",
@@ -69,7 +69,7 @@ export function PrismScene({ className = "" }: { className?: string }) {
         initial={{ opacity: 0, scale: 0.7, rotate: -18 }}
         animate={{ opacity: 1, scale: 1, rotate: 0 }}
         transition={{ duration: 1.1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-14 w-14 -translate-x-1/2 -translate-y-1/2 object-contain md:left-[58%] md:h-20 md:w-20 xl:h-24 xl:w-24"
+        className="theme-split-symbol pointer-events-none absolute left-1/2 top-1/2 z-10 h-14 w-14 -translate-x-1/2 -translate-y-1/2 object-contain md:left-[58%] md:h-20 md:w-20 xl:h-24 xl:w-24"
         style={{
           filter:
             "drop-shadow(0 0 10px rgba(255,255,255,1)) drop-shadow(0 0 26px rgba(180,220,255,0.85)) drop-shadow(0 0 52px rgba(255,255,255,0.55))",

@@ -119,9 +119,9 @@ function ProjectBackground({ color }: { color: string }) {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-x-0 top-0 h-[44rem] bg-[linear-gradient(180deg,#020616_0%,#030817_48%,rgba(3,8,23,0.74)_76%,rgba(3,8,23,0)_100%)]" />
-      <div className="absolute inset-x-0 top-[36rem] h-[34rem] bg-gradient-to-b from-transparent via-background/40 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_58%)]" />
+      <div className="theme-project-top absolute inset-x-0 top-0 h-[44rem] bg-[linear-gradient(180deg,#020616_0%,#030817_48%,rgba(3,8,23,0.74)_76%,rgba(3,8,23,0)_100%)]" />
+      <div className="theme-project-fade absolute inset-x-0 top-[36rem] h-[34rem] bg-gradient-to-b from-transparent via-background/40 to-transparent" />
+      <div className="theme-project-radial absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_58%)]" />
     </div>
   );
 }

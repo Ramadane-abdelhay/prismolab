@@ -44,14 +44,14 @@ export function Footer() {
           <img
             src="/images/logo.svg"
             alt="PRISMO LAB"
-            className="absolute inset-0 h-full w-full object-contain opacity-30"
+            className="theme-footer-logo absolute inset-0 h-full w-full object-contain opacity-30"
             style={{ clipPath: "inset(0 40.5% 0 0)" }}
           />
           <img
             src="/images/logo.svg"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-contain opacity-30"
+            className="theme-footer-logo absolute inset-0 h-full w-full object-contain opacity-30"
             style={{ clipPath: "inset(0 0 0 69.5%)" }}
           />
           <div
@@ -69,7 +69,7 @@ export function Footer() {
             src="/images/symbol.svg"
             alt=""
             aria-hidden="true"
-            className="absolute left-[63.9%] top-1/2 h-[32%] w-auto -translate-x-1/2 -translate-y-1/2 brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,1)] drop-shadow-[0_0_24px_rgba(255,255,255,0.85)] drop-shadow-[0_0_44px_rgba(255,255,255,0.45)]"
+            className="theme-footer-symbol absolute left-[63.9%] top-1/2 h-[32%] w-auto -translate-x-1/2 -translate-y-1/2 brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,1)] drop-shadow-[0_0_24px_rgba(255,255,255,0.85)] drop-shadow-[0_0_44px_rgba(255,255,255,0.45)]"
           />
         </div>
 
