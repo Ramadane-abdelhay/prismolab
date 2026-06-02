@@ -94,22 +94,8 @@ export const projects: Project[] = [
     ]),
   },
   {
-    slug: "project-3",
-    n: "03",
-    title: "Prismo Lab Identity",
-    category: "Studio Identity / Symbol System",
-    year: "2026",
-    client: "Prismo Lab",
-    role: "Brand Identity, Symbol, Storytelling",
-    intro:
-      "A personal studio identity built around the prism symbol, deep blue light, and the idea of turning vision into form.",
-    main: "/images/project-3/main.png",
-    dominantColor: "#00063A",
-    media: makeMedia("project-3", ["main.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.mp4"]),
-  },
-  {
     slug: "layers-coffe-shop",
-    n: "04",
+    n: "03",
     title: "Layers Coffee Shop",
     category: "Cafe Identity / Packaging / Atmosphere",
     year: "2026",
@@ -136,7 +122,7 @@ export const projects: Project[] = [
   },
   {
     slug: "maghrebwaves",
-    n: "05",
+    n: "04",
     title: "Maghreb Waves",
     category: "Storytelling / Surf Culture / Social Identity",
     year: "2026",
@@ -167,7 +153,7 @@ export const projects: Project[] = [
   },
   {
     slug: "orea-coastal-parfum",
-    n: "06",
+    n: "05",
     title: "Orea Coastal Parfum",
     category: "Perfume Concept / Packaging / Art Direction",
     year: "2026",
@@ -192,7 +178,7 @@ export const projects: Project[] = [
   },
   {
     slug: "plantino",
-    n: "07",
+    n: "06",
     title: "Plantino",
     category: "Social Identity",
     year: "2026",
@@ -217,7 +203,7 @@ export const projects: Project[] = [
   },
   {
     slug: "samba-surf-shop",
-    n: "08",
+    n: "07",
     title: "Samba Surf Shop",
     category: "Retail Identity",
     year: "2026",
@@ -240,7 +226,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tafoukt-surf-house",
-    n: "09",
+    n: "08",
     title: "Tafoukt Surf House",
     category: "Hospitality Branding",
     year: "2026",
@@ -263,7 +249,7 @@ export const projects: Project[] = [
   },
   {
     slug: "alya",
-    n: "10",
+    n: "09",
     title: "ALYA",
     category: "Social Identity",
     year: "2026",
@@ -288,7 +274,7 @@ export const projects: Project[] = [
   },
   {
     slug: "flexura-yoga-club",
-    n: "11",
+    n: "10",
     title: "Flexura Yoga Club",
     category: "Wellness Branding",
     year: "2026",
@@ -312,7 +298,7 @@ export const projects: Project[] = [
   },
   {
     slug: "kite-fly-maroc",
-    n: "12",
+    n: "11",
     title: "Kite Fly Maroc",
     category: "Sports Identity",
     year: "2026",
@@ -335,7 +321,7 @@ export const projects: Project[] = [
   },
   {
     slug: "luxe-verve",
-    n: "13",
+    n: "12",
     title: "Luxe Verve",
     category: "Luxury Identity",
     year: "2026",
@@ -356,7 +342,7 @@ export const projects: Project[] = [
   },
   {
     slug: "surfeye",
-    n: "14",
+    n: "13",
     title: "Surfeye",
     category: "Surf Branding",
     year: "2026",
@@ -379,7 +365,7 @@ export const projects: Project[] = [
   },
   {
     slug: "surfun",
-    n: "15",
+    n: "14",
     title: "Surfun",
     category: "Surf Campaign",
     year: "2026",
@@ -398,7 +384,7 @@ export const projects: Project[] = [
   },
   {
     slug: "yacin-pet",
-    n: "16",
+    n: "15",
     title: "Yacin Pet",
     category: "Pet Brand Identity",
     year: "2026",

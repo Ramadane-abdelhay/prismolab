@@ -34,7 +34,7 @@ function ProjectPage() {
   const next = projects[(idx + 1) % projects.length];
   const heroMedia = getHeroMedia(project);
   const galleryMedia = getGalleryMedia(project, heroMedia);
-  const useNaturalMediaSize = ["project-1", "project-2", "project-3"].includes(project.slug);
+  const useNaturalMediaSize = ["project-1", "project-2"].includes(project.slug);
   const useInstagramCrop = [
     "alya",
     "flexura-yoga-club",
